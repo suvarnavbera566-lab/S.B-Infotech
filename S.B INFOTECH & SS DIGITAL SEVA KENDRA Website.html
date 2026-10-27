@@ -1,0 +1,2558 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.B INFOTECH & SS DIGITAL SEVA KENDRA | IT Sales, Repair & e-Governance</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#0B1120',
+                            slate: '#1E293B',
+                            blue: '#2563EB',
+                            electric: '#3B82F6',
+                            emerald: '#10B981',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Utilities & Smooth Transitions */
+        body {
+            background-color: #0B1120;
+            color: #F8FAFC;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-nav {
+            background: rgba(11, 17, 32, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .hero-glow {
+            background: radial-gradient(circle at 50% 30%, rgba(37, 99, 235, 0.22) 0%, rgba(16, 185, 129, 0.08) 40%, rgba(11, 17, 32, 0) 75%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-blue-600 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-slate-950 border-b border-slate-800 text-xs py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-2 text-slate-300">
+                <span class="inline-flex items-center text-emerald-400 font-semibold">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span> <span id="live-shop-status">Open Mon–Sat (9:30 AM – 8:30 PM)</span>
+                </span>
+                <span class="hidden md:inline text-slate-400">|</span>
+                <span id="live-announcement-text" class="hidden md:inline-flex items-center text-slate-300">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 mr-1 text-blue-400"></i> Barasat & New Barrackpore, Kolkata
+                </span>
+            </div>
+            <div class="flex items-center space-x-3 sm:space-x-4 ml-auto sm:ml-0">
+                <a href="tel:+918981297851" class="flex items-center text-blue-300 hover:text-white transition font-medium">
+                    <i data-lucide="phone-call" class="w-3.5 h-3.5 mr-1.5"></i> +91 89812 97851
+                </a>
+                <span class="hidden sm:inline text-slate-600">|</span>
+                <a href="mailto:suvarnavbera566@gmail.com" class="hidden sm:flex items-center text-slate-300 hover:text-white transition font-medium">
+                    <i data-lucide="mail" class="w-3.5 h-3.5 mr-1.5 text-blue-400"></i> suvarnavbera566@gmail.com
+                </a>
+                <span class="text-slate-600">|</span>
+                <button onclick="openWhatsApp('Hi S.B INFOTECH, I have a query regarding your services.')" class="flex items-center text-emerald-400 hover:text-emerald-300 transition font-medium">
+                    <i data-lucide="message-circle" class="w-3.5 h-3.5 mr-1.5"></i> WhatsApp
+                </button>
+                <span class="text-slate-600">|</span>
+                <button onclick="openAdminPanel()" class="flex items-center px-2.5 py-0.5 rounded-md bg-blue-600/20 hover:bg-blue-600 text-blue-300 hover:text-white border border-blue-500/30 transition font-semibold text-xs">
+                    <i data-lucide="shield-lock" class="w-3.5 h-3.5 mr-1"></i> Admin Panel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1. Sticky Navigation Bar -->
+    <header class="sticky top-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <a href="#home" class="flex items-center space-x-3 group focus:outline-none">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center shadow-lg shadow-blue-600/30 border border-blue-400/30 group-hover:scale-105 transition">
+                        <i data-lucide="cpu" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-xl font-extrabold tracking-tight text-white">S.B <span class="text-blue-500">INFOTECH</span></span>
+                        </div>
+                        <span class="block text-[10px] font-semibold tracking-wider uppercase text-emerald-400 bg-emerald-950/60 border border-emerald-500/30 px-1.5 py-0.5 rounded mt-0.5">
+                            + SS Digital Seva Kendra
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 text-sm font-medium text-slate-300">
+                    <a href="#home" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Home</a>
+                    <a href="#services" onclick="switchServiceTab('all')" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">All Services</a>
+                    <a href="#services" onclick="switchServiceTab('it')" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">IT & Hardware</a>
+                    <a href="#estimator" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Products & Estimator</a>
+                    <a href="#services" onclick="switchServiceTab('digital')" class="px-3 py-2 rounded-lg text-emerald-400 hover:text-emerald-300 hover:bg-emerald-950/40 transition flex items-center">
+                        <i data-lucide="file-check-2" class="w-4 h-4 mr-1"></i> Digital Seva
+                    </a>
+                    <a href="#booking" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Tracker & Booking</a>
+                    <a href="#contact" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Contact</a>
+                </nav>
+
+                <!-- Action Buttons -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <a href="tel:+918981297851" class="p-2.5 rounded-xl bg-slate-800 text-blue-400 hover:bg-blue-600 hover:text-white border border-slate-700 transition" title="Call +91 89812 97851">
+                        <i data-lucide="phone" class="w-5 h-5"></i>
+                    </a>
+                    <button onclick="openWhatsApp('Hello S.B INFOTECH, I need quick assistance.')" class="p-2.5 rounded-xl bg-emerald-600/20 text-emerald-400 hover:bg-emerald-600 hover:text-white border border-emerald-500/30 transition" title="Quick WhatsApp Chat">
+                        <i data-lucide="message-square" class="w-5 h-5"></i>
+                    </button>
+                    <a href="#booking" class="inline-flex items-center px-4 py-2.5 rounded-xl font-semibold text-sm bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/30 transition transform hover:-translate-y-0.5">
+                        <i data-lucide="wrench" class="w-4 h-4 mr-2"></i> Book a Repair
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="flex lg:hidden items-center space-x-2">
+                    <a href="tel:+918981297851" class="p-2 rounded-lg bg-slate-800 text-blue-400 border border-slate-700" title="Call Now">
+                        <i data-lucide="phone" class="w-5 h-5"></i>
+                    </a>
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2.5 rounded-xl bg-slate-800 text-slate-200 hover:text-white focus:outline-none border border-slate-700">
+                        <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-900/95 border-b border-slate-800 px-4 pt-3 pb-6 space-y-2">
+            <a href="#home" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-800">Home</a>
+            <a href="#services" onclick="switchServiceTab('all'); toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-medium text-blue-400 bg-blue-950/30 border border-blue-800/40">All Services</a>
+            <a href="#services" onclick="switchServiceTab('it'); toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-800">IT & Hardware Services</a>
+            <a href="#estimator" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-800">PC Estimator & Products</a>
+            <a href="#services" onclick="switchServiceTab('digital'); toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-medium text-emerald-400 bg-emerald-950/30 border border-emerald-800/40">SS Digital Seva Kendra</a>
+            <a href="#booking" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-800">Service Tracker & Booking</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-800">Contact Us</a>
+            <div class="pt-3 flex flex-col sm:flex-row gap-2">
+                <a href="#booking" onclick="toggleMobileMenu()" class="w-full text-center py-3 rounded-xl font-semibold bg-blue-600 text-white shadow-lg shadow-blue-600/30">
+                    Book a Repair Now
+                </a>
+                <button onclick="openWhatsApp('Hello S.B INFOTECH, I want to inquire about a service.')" class="w-full py-3 rounded-xl font-semibold bg-emerald-600/20 text-emerald-300 border border-emerald-500/30 flex items-center justify-center">
+                    <i data-lucide="message-circle" class="w-4 h-4 mr-2"></i> WhatsApp Us
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section id="home" class="relative pt-10 pb-20 lg:pt-16 lg:pb-28 hero-glow overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Copy & CTAs -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-800/90 border border-slate-700 text-xs sm:text-sm text-blue-300 shadow-inner">
+                        <a href="#services" onclick="switchServiceTab('all')" class="px-3 py-1 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-[11px] uppercase tracking-wider transition cursor-pointer shadow">All Services</a>
+                        <span>Premier IT Hub & Authorized Citizen Center</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+                        Complete IT Solutions, Hardware Sales & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-400">Digital Seva</span> Under One Roof
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                        From custom desktop builds, refurbished enterprise laptops, chip-level motherboard diagnostics, and printer/projector servicing to instant vehicle insurance and e-Governance documentation at <strong class="text-emerald-400 font-semibold">SS Digital Seva Kendra</strong>.
+                    </p>
+
+                    <!-- Dual CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#services" onclick="switchServiceTab('all')" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-xl font-bold text-white bg-blue-600 hover:bg-blue-500 shadow-xl shadow-blue-600/25 transition transform hover:-translate-y-0.5">
+                            <span>Explore All Services</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                        </a>
+                        <a href="#estimator" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-xl font-semibold text-slate-200 bg-slate-800/90 hover:bg-slate-700 border border-slate-700 transition">
+                            <i data-lucide="calculator" class="w-5 h-5 mr-2 text-emerald-400"></i>
+                            <span>Get Instant Quote / Estimate</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
+                        <div class="glass-card p-3 rounded-xl flex items-center space-x-2.5">
+                            <div class="p-2 rounded-lg bg-blue-500/10 text-blue-400">
+                                <i data-lucide="award" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-200 leading-tight">5+ Years Enterprise Exp.</span>
+                        </div>
+                        <div class="glass-card p-3 rounded-xl flex items-center space-x-2.5">
+                            <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400">
+                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-200 leading-tight">100% Genuine Spare Parts</span>
+                        </div>
+                        <div class="glass-card p-3 rounded-xl flex items-center space-x-2.5">
+                            <div class="p-2 rounded-lg bg-amber-500/10 text-amber-400">
+                                <i data-lucide="zap" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-200 leading-tight">Quick Same-Day Turnaround</span>
+                        </div>
+                        <div class="glass-card p-3 rounded-xl flex items-center space-x-2.5">
+                            <div class="p-2 rounded-lg bg-purple-500/10 text-purple-400">
+                                <i data-lucide="file-badge" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-200 leading-tight">Authorized Digital Seva</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Dual-Division Showcase Card -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-700/80 shadow-2xl relative">
+                        <div class="absolute -top-3 right-6 bg-gradient-to-r from-blue-600 to-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                            Dual-Wing Facility
+                        </div>
+
+                        <h3 class="text-lg font-bold text-white mb-4 flex items-center">
+                            <i data-lucide="layers" class="w-5 h-5 mr-2 text-blue-400"></i> What Can We Help You With Today?
+                        </h3>
+
+                        <!-- Division 1: S.B INFOTECH -->
+                        <div class="p-4 rounded-xl bg-slate-900/90 border border-blue-500/30 mb-4 hover:border-blue-400 transition group">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <span class="text-[11px] font-bold uppercase tracking-wider text-blue-400">Hardware & Networking Wing</span>
+                                    <h4 class="text-base font-bold text-white">S.B INFOTECH</h4>
+                                </div>
+                                <span class="p-2 rounded-lg bg-blue-600/20 text-blue-400">
+                                    <i data-lucide="monitor-speaker" class="w-5 h-5"></i>
+                                </span>
+                            </div>
+                            <p class="text-xs text-slate-300 mb-3">
+                                Custom PCs, Refurbished & New Laptops, Chip-Level Motherboard Repair, Linux/Windows Dual-Boot, LaserJet Printers & Classroom Projectors.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">POST Diagnostics</span>
+                                <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">SSD/RAM Upgrade</span>
+                                <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">School/Office AMC</span>
+                            </div>
+                        </div>
+
+                        <!-- Division 2: SS DIGITAL SEVA KENDRA -->
+                        <div class="p-4 rounded-xl bg-slate-900/90 border border-emerald-500/30 mb-5 hover:border-emerald-400 transition group">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400">e-Governance & Insurance Wing</span>
+                                    <h4 class="text-base font-bold text-white">SS DIGITAL SEVA KENDRA</h4>
+                                </div>
+                                <span class="p-2 rounded-lg bg-emerald-600/20 text-emerald-400">
+                                    <i data-lucide="shield-alert" class="w-5 h-5"></i>
+                                </span>
+                            </div>
+                            <p class="text-xs text-slate-300 mb-3">
+                                Instant Bike/Car/Commercial Insurance, PAN, Aadhaar Print, Passport, Voter ID, Municipal Tax, WBSEDCL Bills & High-Speed Print/Scan.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="text-[11px] bg-slate-800 text-emerald-300 px-2 py-0.5 rounded">Vehicle Insurance</span>
+                                <span class="text-[11px] bg-slate-800 text-emerald-300 px-2 py-0.5 rounded">PAN & Passport</span>
+                                <span class="text-[11px] bg-slate-800 text-emerald-300 px-2 py-0.5 rounded">PDF/Excel Work</span>
+                            </div>
+                        </div>
+
+                        <!-- Live Quick Ticket Status Lookup Mini-Bar -->
+                        <div class="pt-3 border-t border-slate-800">
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="block text-xs font-medium text-slate-400">Already booked a service? Check live cloud status:</label>
+                                <span id="cloud-sync-badge" class="inline-flex items-center text-[10px] font-semibold text-emerald-400">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1 animate-ping"></span> Live Cloud DB
+                                </span>
+                            </div>
+                            <div class="flex gap-2">
+                                <input type="text" id="hero-ticket-input" placeholder="Ticket ID or Phone (e.g. SB-1042)" class="w-full px-3 py-2 text-sm rounded-lg bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500">
+                                <button onclick="checkTicketStatus('hero')" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-blue-400 border border-slate-700 shrink-0 transition">
+                                    Track Status
+                                </button>
+                            </div>
+                            <div id="hero-ticket-result" class="hidden mt-2 p-3 rounded-xl text-xs bg-slate-950 border border-slate-800"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Core Services Grid (Interactive Tabs & Filtering) -->
+    <section id="services" class="py-16 lg:py-24 bg-slate-900/60 border-y border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-blue-400 bg-blue-950/60 border border-blue-800/50 px-3 py-1 rounded-full">Our Specialized Wings</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Explore Our Complete Service Catalog</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">Browse all services together or filter between our Enterprise IT Hardware division and our Citizen Digital Seva Kendra below.</p>
+            </div>
+
+            <!-- Interactive 3-Tab Pill Switcher -->
+            <div class="flex flex-wrap justify-center items-center gap-3 mb-10 p-2 rounded-2xl bg-slate-950/70 border border-slate-800 max-w-4xl mx-auto">
+                <button id="tab-btn-all" onclick="switchServiceTab('all')" class="flex-1 sm:flex-initial flex items-center justify-center px-6 py-3.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 bg-blue-600 text-white shadow-lg shadow-blue-600/30 border border-blue-400">
+                    <i data-lucide="layers" class="w-4 h-4 mr-2"></i>
+                    <span>All Services</span>
+                </button>
+                <button id="tab-btn-it" onclick="switchServiceTab('it')" class="flex-1 sm:flex-initial flex items-center justify-center px-6 py-3.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-200 bg-slate-800/90 text-slate-300 hover:text-white border border-slate-700">
+                    <i data-lucide="cpu" class="w-4 h-4 mr-2 text-blue-400"></i>
+                    <span>S.B INFOTECH (IT & Hardware)</span>
+                </button>
+                <button id="tab-btn-digital" onclick="switchServiceTab('digital')" class="flex-1 sm:flex-initial flex items-center justify-center px-6 py-3.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-200 bg-slate-800/90 text-slate-300 hover:text-white border border-slate-700">
+                    <i data-lucide="file-check-2" class="w-4 h-4 mr-2 text-emerald-400"></i>
+                    <span>SS DIGITAL SEVA KENDRA (e-Gov & Docs)</span>
+                </button>
+            </div>
+
+            <!-- Search / Filter Bar inside Services -->
+            <div class="max-w-md mx-auto mb-10">
+                <div class="relative">
+                    <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5"></i>
+                    <input type="text" id="service-search" oninput="filterServiceCards()" placeholder="Filter services (e.g. Linux, LaserJet, Insurance, PAN, Motherboard)..." class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-950/90 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500">
+                </div>
+            </div>
+
+            <!-- S.B INFOTECH Wing Subheading (Visible in All Services view) -->
+            <div id="wing-header-it" class="mb-6 flex items-center justify-between border-b border-slate-800 pb-3">
+                <div class="flex items-center space-x-2.5">
+                    <span class="p-2 rounded-lg bg-blue-600/20 text-blue-400 border border-blue-500/30">
+                        <i data-lucide="cpu" class="w-5 h-5"></i>
+                    </span>
+                    <div>
+                        <h3 class="text-lg font-extrabold text-white">S.B INFOTECH</h3>
+                        <p class="text-xs text-slate-400">Computer Sales, Chip-Level Repair, Printers, Linux/Windows & Networking</p>
+                    </div>
+                </div>
+                <span class="hidden sm:inline-block text-xs font-bold uppercase tracking-wider text-blue-400 bg-blue-950/60 border border-blue-800/50 px-3 py-1 rounded-full">IT & Hardware Wing</span>
+            </div>
+
+            <!-- TAB 1: S.B INFOTECH (IT & Hardware) -->
+            <div id="tab-content-it" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                
+                <!-- Card 1 -->
+                <div class="service-card glass-card rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500/50 transition group" data-keywords="custom desktop pc builds home office gaming ryzen intel">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition">
+                            <i data-lucide="monitor" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold uppercase tracking-wider text-blue-400">Custom Workstations</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-2">Custom Desktop PC Builds</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                            Tailor-made desktop configurations for Home study, Office accounting (Tally/GST), CAD designing, and high-FPS Gaming with genuine Intel & AMD Ryzen processors.
+                        </p>
+                    </div>
+                    <div>
+                        <ul class="text-xs text-slate-400 space-y-1.5 mb-5 border-t border-slate-800 pt-3">
+                            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400 mr-2"></i> Clean cable management & thermal tuning</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400 mr-2"></i> Up to 3-Year manufacturer component warranty</li>
+                        </ul>
+                        <button onclick="preselectBooking('New PC/Laptop Purchase', 'Inquiry for Custom Desktop PC Build')" class="w-full py-2.5 rounded-xl bg-blue-600/15 hover:bg-blue-600 text-blue-300 hover:text-white text-xs font-semibold border border-blue-500/30 transition">
+                            Configure & Request Quote
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card glass-card rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500/50 transition group" data-keywords="new refurbished laptops lenovo thinkpad hp dell ssd ram">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition">
+                            <i data-lucide="laptop" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold uppercase tracking-wider text-blue-400">Portables & Upgrades</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-2">New & Refurbished Laptops</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                            Brand new laptops and A++ grade enterprise refurbished business laptops (Lenovo ThinkPad, HP EliteBook, Dell Latitude) rigorously stress-tested for reliability.
+                        </p>
+                    </div>
+                    <div>
+                        <ul class="text-xs text-slate-400 space-y-1.5 mb-5 border-t border-slate-800 pt-3">
+                            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400 mr-2"></i> NVMe SSD & DDR4/DDR5 RAM upgrades</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400 mr-2"></i> Battery, keyboard & hinge replacement</li>
+                        </ul>
+                        <button onclick="preselectBooking('New PC/Laptop Purchase', 'Inquiry for New / Refurbished Laptop')" class="w-full py-2.5 rounded-xl bg-blue-600/15 hover:bg-blue-600 text-blue-300 hover:text-white text-xs font-semibold border border-blue-500/30 transition">
+                            Check Available Models
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card glass-card rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500/50 transition group" data-keywords="chip level motherboard power post diagnostics bios no display dead">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition">
+                            <i data-lucide="microchip" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold uppercase tracking-wider text-blue-400">Precision Engineering</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-2">Chip-Level & POST Diagnostics</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                            Advanced motherboard repair for dead systems, no-display issues, power rail shorts, BIOS flashing, BGA rework, and SMPS power diagnostics.
+                        </p>
+                    </div>
+                    <div>
+                        <ul class="text-xs text-slate-400 space-y-1.5 mb-5 border-t border-slate-800 pt-3">
+                            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400 mr-2"></i> IC, MOSFET & capacitor-level troubleshooting</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400 mr-2"></i> Thermal paste replacement & overheating fix</li>
+                        </ul>
+                        <button onclick="preselectBooking('Hardware Repair', 'Chip-Level Motherboard / Power POST Diagnostics')" class="w-full py-2.5 rounded-xl bg-blue-600/15 hover:bg-blue-600 text-blue-300 hover:text-white text-xs font-semibold border border-blue-500/30 transition">
+                            Book Diagnostic Check
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="service-card glass-card rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500/50 transition group" data-keywords="printer projector servicing hp laserjet epson classroom office">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition">
+                            <i data-lucide="printer" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold uppercase tracking-wider text-blue-400">Peripherals & Optics</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-2">Printer & Projector Servicing</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                            Expert servicing for HP LaserJet, Epson EcoTank, Brother printers, and classroom/office projectors. Paper jam fixes, fuser film, and optical lens cleaning.
+                        </p>
+                    </div>
+                    <div>
+                        <ul class="text-xs text-slate-400 space-y-1.5 mb-5 border-t border-slate-800 pt-3">
+                            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400 mr-2"></i> Toner refilling, cartridge & printhead repair</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400 mr-2"></i> Projector lamp replacement & HDMI matrix setup</li>
+                        </ul>
+                        <button onclick="preselectBooking('Printer/Projector Issue', 'Printer / Projector Servicing Request')" class="w-full py-2.5 rounded-xl bg-blue-600/15 hover:bg-blue-600 text-blue-300 hover:text-white text-xs font-semibold border border-blue-500/30 transition">
+                            Schedule Printer/Projector Fix
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="service-card glass-card rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500/50 transition group" data-keywords="os installation windows 10 11 ubuntu linux dual boot driver smb networking">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition">
+                            <i data-lucide="terminal" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold uppercase tracking-wider text-blue-400">Software & LAN</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-2">OS, Linux Dual-Boot & Networking</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                            Clean installation of Windows 10/11, Ubuntu/Mint Linux Dual-Boot for students & developers, hardware driver tuning, and office SMB file/printer sharing.
+                        </p>
+                    </div>
+                    <div>
+                        <ul class="text-xs text-slate-400 space-y-1.5 mb-5 border-t border-slate-800 pt-3">
+                            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400 mr-2"></i> Partition backup & zero data-loss OS migration</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400 mr-2"></i> Router, LAN crimping & shared folder setup</li>
+                        </ul>
+                        <button onclick="preselectBooking('Hardware Repair', 'OS Installation / Dual-Boot / Networking Setup')" class="w-full py-2.5 rounded-xl bg-blue-600/15 hover:bg-blue-600 text-blue-300 hover:text-white text-xs font-semibold border border-blue-500/30 transition">
+                            Book OS / Network Setup
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="service-card glass-card rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500/50 transition group" data-keywords="annual maintenance contracts amc schools offices institutions">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition">
+                            <i data-lucide="building-2" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold uppercase tracking-wider text-blue-400">Institutional Support</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-2">Annual Maintenance (AMC)</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                            Dedicated IT infrastructure maintenance contracts for Schools, Computer Labs, Coaching Centers, Clinics, and Small Businesses in Barasat & New Barrackpore.
+                        </p>
+                    </div>
+                    <div>
+                        <ul class="text-xs text-slate-400 space-y-1.5 mb-5 border-t border-slate-800 pt-3">
+                            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400 mr-2"></i> Scheduled preventive lab health checkups</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400 mr-2"></i> Priority on-site emergency breakdown support</li>
+                        </ul>
+                        <button onclick="preselectBooking('Hardware Repair', 'School / Office Annual Maintenance Contract (AMC) Inquiry')" class="w-full py-2.5 rounded-xl bg-blue-600/15 hover:bg-blue-600 text-blue-300 hover:text-white text-xs font-semibold border border-blue-500/30 transition">
+                            Request Institutional AMC Proposal
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SS DIGITAL SEVA KENDRA Wing Subheading (Visible in All Services view) -->
+            <div id="wing-header-digital" class="mb-6 flex items-center justify-between border-b border-slate-800 pb-3">
+                <div class="flex items-center space-x-2.5">
+                    <span class="p-2 rounded-lg bg-emerald-600/20 text-emerald-400 border border-emerald-500/30">
+                        <i data-lucide="file-check-2" class="w-5 h-5"></i>
+                    </span>
+                    <div>
+                        <h3 class="text-lg font-extrabold text-white">SS DIGITAL SEVA KENDRA</h3>
+                        <p class="text-xs text-slate-400">Vehicle Insurance, PAN/Passport, Municipal/KMC, WBSEDCL Meter, Rail/Bus Tickets & Document Studio</p>
+                    </div>
+                </div>
+                <span class="hidden sm:inline-block text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/60 border border-emerald-800/50 px-3 py-1 rounded-full">e-Governance Wing</span>
+            </div>
+
+            <!-- TAB 2: SS DIGITAL SEVA KENDRA (Documentation & e-Governance) -->
+            <div id="tab-content-digital" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Digital Card 1 -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between border-emerald-500/30 hover:border-emerald-400 transition group" data-keywords="two wheeler four wheeler commercial vehicle insurance bike car renewal third party">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                                <i data-lucide="car" class="w-6 h-6"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-950 text-emerald-300 border border-emerald-700/50">Instant Policy Copy</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Two-Wheeler, Four-Wheeler & Commercial Vehicle Insurance</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                            Instant motor insurance issuance and renewal for Bikes, Scooters, Private Cars, Goods Carriers, and Commercial Vehicles. Compare top insurers for First-Party (Comprehensive) and Third-Party policies with zero hidden charges.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="grid grid-cols-2 gap-2 text-xs text-slate-300 mb-5 bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+                            <span class="flex items-center"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> 5-Min Policy Print</span>
+                            <span class="flex items-center"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> Expired Policy Renewal</span>
+                            <span class="flex items-center"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> NCB Protection Advice</span>
+                            <span class="flex items-center"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> Vahan Status Updated</span>
+                        </div>
+                        <button onclick="preselectBooking('Vehicle Insurance', 'Vehicle Insurance Renewal / New Policy')" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-bold shadow-lg shadow-emerald-600/25 transition">
+                            Get Instant Insurance Quote
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Digital Card 2 -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between border-emerald-500/30 hover:border-emerald-400 transition group" data-keywords="pan card aadhaar printing voter id passport assistance correction">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                                <i data-lucide="id-card" class="w-6 h-6"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-950 text-emerald-300 border border-emerald-700/50">Citizen ID Services</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">PAN Card, Aadhaar Printing, Voter ID & Passport Assistance</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                            Hassle-free application and correction support for New/Minor PAN Cards, Aadhaar PVC/Smart Laminated Print, Voter ID registration/transfer, and Passport Seva appointment booking.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="grid grid-cols-2 gap-2 text-xs text-slate-300 mb-5 bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+                            <span class="flex items-center"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> e-PAN in 48–72 Hrs</span>
+                            <span class="flex items-center"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> Name/DOB Correction</span>
+                            <span class="flex items-center"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> Passport Slot Booking</span>
+                            <span class="flex items-center"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> PAN-Aadhaar Link</span>
+                        </div>
+                        <button onclick="preselectBooking('Digital Documentation', 'PAN / Passport / Voter ID / Aadhaar Service')" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-bold shadow-lg shadow-emerald-600/25 transition">
+                            Book Documentation Slot
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Digital Card 3 -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between border-emerald-500/30 hover:border-emerald-400 transition group" data-keywords="municipal property documentation kmc e-district online bill payments form fill ups tax wbsedcl electric meter rail bus tickets">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                                <i data-lucide="landmark" class="w-6 h-6"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-950 text-emerald-300 border border-emerald-700/50">e-District, Municipal & Travel</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Municipal/KMC Docs, WBSEDCL Electric Meter & Rail/Bus Tickets</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                            Complete assistance with Municipal & KMC Holding/Property Tax, Banglarbhumi Land Records (Porcha/Mutation), WBSEDCL New Electric Meter Applications & Bill Payments, e-District Certificates, and IRCTC Rail/Bus Ticket Booking.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="grid grid-cols-2 gap-2 text-xs text-slate-300 mb-5 bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+                            <span class="flex items-center"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> KMC / Land Porcha</span>
+                            <span class="flex items-center"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> WBSEDCL Meter & Bills</span>
+                            <span class="flex items-center"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> e-District Certificates</span>
+                            <span class="flex items-center"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> IRCTC Rail & Bus Tickets</span>
+                        </div>
+                        <button onclick="preselectBooking('Digital Documentation', 'Municipal / WBSEDCL Electric Meter / e-District / Rail-Bus Ticket')" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-bold shadow-lg shadow-emerald-600/25 transition">
+                            Inquire About Documentation
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Digital Card 4 -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between border-emerald-500/30 hover:border-emerald-400 transition group" data-keywords="high speed printing scanning lamination data formatting pdf excel word typing">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                                <i data-lucide="file-Spreadsheet" class="w-6 h-6"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-950 text-emerald-300 border border-emerald-700/50">Document Studio</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">High-Speed Printing, Scanning, Lamination & Data Formatting</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                            Crystal-clear Color & B/W Laser printing from WhatsApp/Email, bulk multi-page OCR scanning, heavy-duty pouch lamination, Bio-data/CV design, and complex PDF/Excel spreadsheet formatting.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="grid grid-cols-2 gap-2 text-xs text-slate-300 mb-5 bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+                            <span class="flex items-center"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> WhatsApp Direct Print</span>
+                            <span class="flex items-center"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> PDF Merge & Compress</span>
+                            <span class="flex items-center"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> Excel Data Entry</span>
+                            <span class="flex items-center"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i> Photo & ID Lamination</span>
+                        </div>
+                        <button onclick="openWhatsApp('Hello SS Digital Seva Kendra, I want to send documents for printing/formatting.')" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-bold shadow-lg shadow-emerald-600/25 transition flex items-center justify-center">
+                            <i data-lucide="send" class="w-4 h-4 mr-2"></i> Send Files via WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. Featured Products & Quick Service / PC Estimate Calculator -->
+    <section id="estimator" class="py-16 lg:py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                
+                <!-- Left Column: Interactive Estimator (7 Cols) -->
+                <div class="lg:col-span-7 glass-card rounded-2xl p-6 sm:p-8 border border-blue-500/30 shadow-2xl">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-blue-400">Instant Transparency</span>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Quick Service & PC Estimate Calculator</h2>
+                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-blue-400 shrink-0">
+                            <i data-lucide="calculator" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+
+                    <p class="text-sm text-slate-300 mb-6">
+                        Select what you need below to view our estimated price range and typical turnaround time before booking.
+                    </p>
+
+                    <div class="space-y-5">
+                        <!-- Step 1: Select Service / Build Type -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">1. Select Requirement Category</label>
+                            <select id="calc-service" onchange="updateEstimate()" class="w-full px-4 py-3.5 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm font-medium focus:outline-none focus:border-blue-500">
+                                <option value="ssd_ram">Laptop / Desktop SSD & RAM Speed Upgrade</option>
+                                <option value="os_linux">OS Installation (Windows 10/11 or Ubuntu Dual-Boot + Drivers)</option>
+                                <option value="chip_repair">Chip-Level Motherboard / Dead PC POST Diagnostics & Repair</option>
+                                <option value="office_pc">Complete Custom Desktop PC Setup (Home / Office / Accounting)</option>
+                                <option value="gaming_pc">Mid-to-High Tier Custom Gaming / Editing Workstation PC</option>
+                                <option value="refurb_laptop">Certified Enterprise Refurbished Laptop (Lenovo / HP / Dell)</option>
+                                <option value="printer_service">Printer Servicing / Toner Refill / Classroom Projector Repair</option>
+                                <option value="vehicle_ins">Two-Wheeler / Four-Wheeler / Commercial Insurance Renewal</option>
+                                <option value="digital_doc">PAN Card / Passport Application / Land Mutation Documentation</option>
+                            </select>
+                        </div>
+
+                        <!-- Step 2: Specification / Tier Selector -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">2. Select Tier / Service Mode</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="calc-tier" value="standard" checked onchange="updateEstimate()" class="peer sr-only">
+                                    <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-700 peer-checked:border-blue-500 peer-checked:bg-blue-950/40 transition text-center">
+                                        <div class="text-xs font-bold text-white">Standard / Essential</div>
+                                        <div class="text-[11px] text-slate-400 mt-0.5">Walk-in / Base Spec</div>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="calc-tier" value="pro" onchange="updateEstimate()" class="peer sr-only">
+                                    <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-700 peer-checked:border-blue-500 peer-checked:bg-blue-950/40 transition text-center">
+                                        <div class="text-xs font-bold text-white">Performance / Plus</div>
+                                        <div class="text-[11px] text-slate-400 mt-0.5">Higher Spec / Priority</div>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="calc-tier" value="doorstep" onchange="updateEstimate()" class="peer sr-only">
+                                    <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-700 peer-checked:border-emerald-500 peer-checked:bg-emerald-950/40 transition text-center">
+                                        <div class="text-xs font-bold text-emerald-300">+ Doorstep Pickup</div>
+                                        <div class="text-[11px] text-slate-400 mt-0.5">Barasat / New Barrackpore</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Output Display Box -->
+                        <div class="p-5 rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950/40 border border-slate-700/80 space-y-4">
+                            <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-800 pb-4">
+                                <div>
+                                    <span class="text-xs text-slate-400 block">Estimated Price Range</span>
+                                    <span id="calc-price" class="text-2xl sm:text-3xl font-extrabold text-emerald-400">₹1,400 – ₹3,200</span>
+                                </div>
+                                <div class="text-left sm:text-right">
+                                    <span class="text-xs text-slate-400 block">Estimated Turnaround</span>
+                                    <span id="calc-time" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30 mt-1">
+                                        Same Day (1 – 2 Hours)
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="text-xs font-semibold text-slate-300 block mb-1">What's Included:</span>
+                                <p id="calc-desc" class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                    Includes genuine NVMe/SATA SSD or DDR4/DDR5 RAM installation, OS cloning or fresh setup, thermal inspection, and warranty registration.
+                                </p>
+                            </div>
+
+                            <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                                <button onclick="applyEstimateToBooking()" class="flex-1 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm shadow-lg shadow-blue-600/25 transition flex items-center justify-center">
+                                    <i data-lucide="calendar-check" class="w-4 h-4 mr-2"></i> Book This Service Now
+                                </button>
+                                <button onclick="sendEstimateToWhatsApp()" class="py-3 px-4 rounded-xl bg-emerald-600/20 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/30 font-semibold text-xs sm:text-sm transition flex items-center justify-center">
+                                    <i data-lucide="message-circle" class="w-4 h-4 mr-2"></i> Send Estimate on WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Featured Ready-to-Buy Hardware & Combos (5 Cols) -->
+                <div class="lg:col-span-5 space-y-5">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">In-Store Bestsellers</span>
+                        <h3 class="text-2xl font-extrabold text-white mt-1">Featured Hardware & Deals</h3>
+                        <p class="text-xs sm:text-sm text-slate-400 mt-1">Tested, warrantied, and ready for pickup or delivery in Barasat & New Barrackpore.</p>
+                    </div>
+
+                    <!-- Product Item 1 -->
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-600/20 text-blue-300 border border-blue-500/30">Bestseller Desktop</span>
+                                <h4 class="text-base font-bold text-white mt-1.5">Office & Student Complete Desktop</h4>
+                                <p class="text-xs text-slate-400 mt-1">Intel Core i5 / Ryzen 5 • 8GB/16GB RAM • 512GB NVMe SSD • 19.5" LED Monitor • UPS + Keyboard/Mouse</p>
+                            </div>
+                            <div class="text-right shrink-0 ml-3">
+                                <span class="text-xs text-slate-400 block">Starts at</span>
+                                <span class="text-lg font-extrabold text-emerald-400">₹18,500</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-800/80 flex justify-between items-center">
+                            <span class="text-[11px] text-slate-400 flex items-center"><i data-lucide="shield" class="w-3.5 h-3.5 mr-1 text-blue-400"></i> 3-Yr Component Warranty</span>
+                            <button onclick="preselectBooking('New PC/Laptop Purchase', 'Office & Student Complete Desktop (Starts ₹18,500)')" class="text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center">
+                                Inquire Now <i data-lucide="chevron-right" class="w-4 h-4 ml-0.5"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Item 2 -->
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-600/20 text-emerald-300 border border-emerald-500/30">A++ Corporate Grade</span>
+                                <h4 class="text-base font-bold text-white mt-1.5">Refurbished Business Laptops</h4>
+                                <p class="text-xs text-slate-400 mt-1">Lenovo ThinkPad / Dell Latitude / HP EliteBook • Core i5/i7 (8th–11th Gen) • 8GB RAM • 256GB/512GB SSD</p>
+                            </div>
+                            <div class="text-right shrink-0 ml-3">
+                                <span class="text-xs text-slate-400 block">Range</span>
+                                <span class="text-lg font-extrabold text-emerald-400">₹14,500+</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-800/80 flex justify-between items-center">
+                            <span class="text-[11px] text-slate-400 flex items-center"><i data-lucide="battery-charging" class="w-3.5 h-3.5 mr-1 text-emerald-400"></i> Tested Battery + Original Adapter</span>
+                            <button onclick="preselectBooking('New PC/Laptop Purchase', 'Refurbished Business Laptop (ThinkPad/Dell/HP)')" class="text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center">
+                                Check Stock <i data-lucide="chevron-right" class="w-4 h-4 ml-0.5"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Item 3 -->
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-600/20 text-purple-300 border border-purple-500/30">Speed Booster Pack</span>
+                                <h4 class="text-base font-bold text-white mt-1.5">Laptop Revival Combo (SSD + OS + Service)</h4>
+                                <p class="text-xs text-slate-400 mt-1">256GB/512GB High-Speed SSD + Windows 11 / Ubuntu Dual-Boot + Internal Fan Dust Cleaning & Thermal Paste</p>
+                            </div>
+                            <div class="text-right shrink-0 ml-3">
+                                <span class="text-xs text-slate-400 block">Combo</span>
+                                <span class="text-lg font-extrabold text-emerald-400">₹2,199</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-800/80 flex justify-between items-center">
+                            <span class="text-[11px] text-slate-400 flex items-center"><i data-lucide="zap" class="w-3.5 h-3.5 mr-1 text-amber-400"></i> 10x Faster Boot Speed</span>
+                            <button onclick="preselectBooking('Hardware Repair', 'Laptop Revival Combo (SSD + OS + Thermal Service)')" class="text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center">
+                                Book Upgrade <i data-lucide="chevron-right" class="w-4 h-4 ml-0.5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Interactive "Book a Repair / Service Request" & Ticket Tracker Section -->
+    <section id="booking" class="py-16 lg:py-24 bg-slate-900/70 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Booking Form (7 Columns) -->
+                <div class="lg:col-span-7 glass-card rounded-2xl p-6 sm:p-8 border border-slate-700/80 shadow-xl">
+                    <div class="mb-6">
+                        <span class="text-xs font-bold uppercase tracking-wider text-blue-400">Priority Service Desk</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Book a Repair or Service Request</h2>
+                        <p class="text-sm text-slate-400 mt-1">Submit your details below to receive an instant Service Reference Ticket ID and priority callback.</p>
+                    </div>
+
+                    <form id="service-booking-form" onsubmit="handleBookingSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Customer Full Name *</label>
+                                <input type="text" id="cust-name" required placeholder="e.g. Subhajit Banerjee" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Phone / WhatsApp Number *</label>
+                                <input type="tel" id="cust-phone" required pattern="[0-9+\-\s]{10,15}" placeholder="e.g. 9876543210" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-blue-500">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Email Address (Optional)</label>
+                                <input type="email" id="cust-email" placeholder="customer@email.com" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Select Wing & Service Category *</label>
+                                <select id="cust-category" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm focus:outline-none focus:border-blue-500">
+                                    <optgroup label="S.B INFOTECH (IT & Hardware Wing)">
+                                        <option value="Hardware Repair">Hardware Repair (PC / Laptop / Motherboard)</option>
+                                        <option value="New PC/Laptop Purchase">New PC Build / Refurbished Laptop Purchase</option>
+                                        <option value="Printer/Projector Issue">Printer / Projector Servicing (HP M1136 etc.)</option>
+                                    </optgroup>
+                                    <optgroup label="SS DIGITAL SEVA KENDRA (e-Governance Wing)">
+                                        <option value="Vehicle Insurance">Vehicle Insurance (Bike / Car / Commercial)</option>
+                                        <option value="Digital Documentation">Digital Documentation (PAN / Municipal / WBSEDCL / Tickets)</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Preferred Date *</label>
+                                <input type="date" id="cust-date" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm focus:outline-none focus:border-blue-500">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Service Mode Preference</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="service-mode" value="Walk-in at Center" checked class="peer sr-only">
+                                    <div class="p-3 rounded-xl bg-slate-950 border border-slate-700 peer-checked:border-blue-500 peer-checked:bg-blue-950/30 text-xs font-semibold text-center text-slate-200">
+                                        Walk-in at Center
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="service-mode" value="Doorstep Pickup (Barasat / New Barrackpore)" class="peer sr-only">
+                                    <div class="p-3 rounded-xl bg-slate-950 border border-slate-700 peer-checked:border-emerald-500 peer-checked:bg-emerald-950/30 text-xs font-semibold text-center text-emerald-300">
+                                        Doorstep Pickup (Barasat / New Barrackpore)
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Device Model / Issue or Document Description *</label>
+                            <textarea id="cust-desc" rows="3" required placeholder="Describe the issue (e.g., HP Laptop not turning on, LaserJet paper jam, or Bike Insurance renewal for WB-24-XX-XXXX)..." class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-blue-500"></textarea>
+                        </div>
+
+                        <!-- Instant Delivery Method Preference -->
+                        <div class="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <label class="flex items-center space-x-2.5 cursor-pointer text-xs text-slate-300">
+                                <input type="checkbox" id="auto-whatsapp-send" checked class="w-4 h-4 rounded text-emerald-500 bg-slate-900 border-slate-700 focus:ring-0">
+                                <span>Automatically open <strong class="text-emerald-400">WhatsApp (+91 89812 97851)</strong> with my ticket details</span>
+                            </label>
+                            <span class="text-[11px] text-slate-400">Or send via Email in next step</span>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold text-sm sm:text-base shadow-xl shadow-blue-600/25 transition flex items-center justify-center">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-2"></i> Generate Service Ticket & Book Now
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Live Service Tracker & Recent Tickets (5 Columns) -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-700/80">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="p-2.5 rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                                <i data-lucide="radar" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Live Service Tracker</h3>
+                                <p class="text-xs text-slate-400">Check repair or documentation progress</p>
+                            </div>
+                        </div>
+
+                        <p class="text-xs text-slate-300 mb-4">
+                            Enter your <strong class="text-white">Ticket ID</strong> or <strong class="text-white">Phone Number</strong> below (or try demo tickets <button onclick="fillDemoTicket('SB-1042')" class="text-blue-400 underline font-semibold">SB-1042</button> or <button onclick="fillDemoTicket('SS-8821')" class="text-emerald-400 underline font-semibold">SS-8821</button>):
+                        </p>
+
+                        <div class="flex gap-2 mb-4">
+                            <input type="text" id="main-ticket-input" placeholder="Ticket ID (SB-XXXX) or 10-digit Phone" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm focus:outline-none focus:border-blue-500">
+                            <button onclick="checkTicketStatus('main')" class="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm shrink-0 transition">
+                                Track Live
+                            </button>
+                        </div>
+
+                        <div id="main-ticket-result" class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs space-y-3">
+                            <!-- Populated dynamically via live cloud tracker -->
+                        </div>
+                    </div>
+
+                    <!-- Doorstep Coverage Highlight Box -->
+                    <div class="glass-card rounded-2xl p-6 border border-emerald-500/30 bg-gradient-to-br from-emerald-950/30 to-slate-900">
+                        <div class="flex items-start space-x-3.5">
+                            <div class="p-2.5 rounded-xl bg-emerald-500/20 text-emerald-400 shrink-0 mt-0.5">
+                                <i data-lucide="truck" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-white">Doorstep Pickup & Delivery Available</h4>
+                                <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                                    Can't visit the shop with a heavy desktop or printer? We offer convenient doorstep pickup and drop-off across <strong class="text-white">Barasat, New Barrackpore, Madhyamgram, Hridaypur, and Birati</strong>.
+                                </p>
+                                <div class="mt-3 flex items-center space-x-4 text-xs font-semibold text-emerald-400">
+                                    <span class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-1"></i> Safe Transit</span>
+                                    <span class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-1"></i> On-Site Network Setup</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Why Choose Us & Local Testimonials -->
+    <section class="py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Why Choose Us Grid -->
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-blue-400">The S.B INFOTECH Advantage</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Why Residents & Businesses Trust Us</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">Combining enterprise-grade hardware engineering with friendly neighborhood accessibility.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                <div class="glass-card p-6 rounded-2xl border border-slate-800">
+                    <div class="w-11 h-11 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center mb-4">
+                        <i data-lucide="wrench" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Component-Level Diagnostics</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Instead of immediately forcing expensive full-board replacements, we perform systematic POST & chip-level diagnostics to repair your existing motherboard or printer economically.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl border border-slate-800">
+                    <div class="w-11 h-11 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center mb-4">
+                        <i data-lucide="badge-indian-rupee" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">100% Upfront Pricing</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        No surprise charges. Whether it's an SSD upgrade, laser toner refill, or commercial vehicle insurance policy, you approve the exact quote before we proceed.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl border border-slate-800">
+                    <div class="w-11 h-11 rounded-xl bg-purple-600/20 text-purple-400 flex items-center justify-center mb-4">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">One-Stop Convenience</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Drop your laptop for servicing and renew your bike insurance, print urgent documents, or complete municipal tax payments at SS Digital Seva Kendra in the same visit.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Customer Testimonials -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-2xl border border-slate-800/90 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 mb-3">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-sm text-slate-300 italic leading-relaxed mb-4">
+                            "My desktop had a sudden no-display POST error before my semester exams. S.B INFOTECH diagnosed the motherboard power rail and set up Windows 11 + Ubuntu dual-boot the same evening. Highly knowledgeable!"
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-3 border-t border-slate-800">
+                        <div class="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center font-bold text-xs text-white">AD</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">Arindam Das</h4>
+                            <span class="text-[11px] text-slate-400">Engineering Student, Barasat</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl border border-slate-800/90 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 mb-3">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-sm text-slate-300 italic leading-relaxed mb-4">
+                            "We rely on S.B INFOTECH for our school's HP LaserJet printers, classroom projectors, and computer lab maintenance. Prompt on-site support and genuine spare parts every time."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-3 border-t border-slate-800">
+                        <div class="w-9 h-9 rounded-full bg-emerald-600 flex items-center justify-center font-bold text-xs text-white">SM</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">Somenath Mukherjee</h4>
+                            <span class="text-[11px] text-slate-400">Academy Coordinator, New Barrackpore</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl border border-slate-800/90 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 mb-3">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-sm text-slate-300 italic leading-relaxed mb-4">
+                            "SS Digital Seva Kendra is my go-to place for renewing my commercial vehicle insurance, PAN work, and complex Excel/PDF formatting. Fast service without long queues."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-3 border-t border-slate-800">
+                        <div class="w-9 h-9 rounded-full bg-purple-600 flex items-center justify-center font-bold text-xs text-white">PK</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">Prabirundu Kundu</h4>
+                            <span class="text-[11px] text-slate-400">Business Owner, Madhyamgram</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 7. Footer & Contact Section -->
+    <footer id="contact" class="bg-slate-950 border-t border-slate-800 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Contact Cards Row -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pb-12 border-b border-slate-800">
+                <div class="glass-card p-6 rounded-2xl flex items-start space-x-4">
+                    <div class="p-3 rounded-xl bg-blue-600/20 text-blue-400 border border-blue-500/30 shrink-0">
+                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white">Our Location</h4>
+                        <p class="text-xs sm:text-sm text-slate-300 mt-1">
+                            Barasat / New Barrackpore, Kolkata,<br>North 24 Parganas, West Bengal – 700124 / 700131
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl flex items-start space-x-4">
+                    <div class="p-3 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 shrink-0">
+                        <i data-lucide="phone-call" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white">Call / WhatsApp & Email Desk</h4>
+                        <p class="text-xs sm:text-sm text-slate-300 mt-1 space-y-1">
+                            <span class="block">Phone / WA: <a href="tel:+918981297851" class="text-blue-400 hover:underline font-semibold">+91 89812 97851</a></span>
+                            <span class="block">Email: <a href="mailto:suvarnavbera566@gmail.com" class="text-emerald-400 hover:underline font-medium break-all">suvarnavbera566@gmail.com</a></span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl flex items-start space-x-4">
+                    <div class="p-3 rounded-xl bg-amber-600/20 text-amber-400 border border-amber-500/30 shrink-0">
+                        <i data-lucide="clock" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-bold text-white">Business Hours</h4>
+                        <p class="text-xs sm:text-sm text-slate-300 mt-1">
+                            Monday – Saturday: <strong class="text-white">9:30 AM – 8:30 PM</strong><br>
+                            <span class="text-xs text-slate-400">Proprietor: Suvarnav Bera</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Footer Links -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-12">
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white">
+                            <i data-lucide="cpu" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <span class="text-lg font-extrabold text-white block leading-none">S.B INFOTECH</span>
+                            <span class="text-[11px] font-semibold text-emerald-400">& SS DIGITAL SEVA KENDRA</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Your trusted neighborhood partner for Custom PCs, Refurbished Laptops, Chip-Level Motherboard Repair, Printer/Projector Servicing, Motor Insurance, and Citizen e-Governance Services.
+                    </p>
+                    <div class="pt-1 text-xs text-slate-300 space-y-1">
+                        <div><strong class="text-slate-400">Call/WhatsApp:</strong> <a href="tel:+918981297851" class="text-blue-400 hover:underline">+91 89812 97851</a></div>
+                        <div><strong class="text-slate-400">Email:</strong> <a href="mailto:suvarnavbera566@gmail.com" class="text-emerald-400 hover:underline">suvarnavbera566@gmail.com</a></div>
+                    </div>
+                </div>
+
+                <!-- Col 2: S.B INFOTECH Links -->
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">IT & Hardware Services</h4>
+                    <ul class="space-y-2.5 text-xs text-slate-400">
+                        <li><a href="#services" onclick="switchServiceTab('it')" class="hover:text-blue-400 transition">Custom Desktop PC Builds</a></li>
+                        <li><a href="#services" onclick="switchServiceTab('it')" class="hover:text-blue-400 transition">New & Refurbished Laptops</a></li>
+                        <li><a href="#services" onclick="switchServiceTab('it')" class="hover:text-blue-400 transition">Chip-Level Motherboard & POST Fix</a></li>
+                        <li><a href="#services" onclick="switchServiceTab('it')" class="hover:text-blue-400 transition">LaserJet Printer & Projector Repair</a></li>
+                        <li><a href="#services" onclick="switchServiceTab('it')" class="hover:text-blue-400 transition">Windows 11 / Linux Dual-Boot & LAN</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: SS DIGITAL SEVA Links -->
+                <div>
+                    <h4 class="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-4">SS Digital Seva Kendra</h4>
+                    <ul class="space-y-2.5 text-xs text-slate-400">
+                        <li><a href="#services" onclick="switchServiceTab('digital')" class="hover:text-emerald-400 transition">2W, 4W & Commercial Insurance</a></li>
+                        <li><a href="#services" onclick="switchServiceTab('digital')" class="hover:text-emerald-400 transition">PAN Card, Voter ID & Passport Seva</a></li>
+                        <li><a href="#services" onclick="switchServiceTab('digital')" class="hover:text-emerald-400 transition">Municipal Tax & Land Porcha/Mutation</a></li>
+                        <li><a href="#services" onclick="switchServiceTab('digital')" class="hover:text-emerald-400 transition">WBSEDCL Electricity Bill Payment</a></li>
+                        <li><a href="#services" onclick="switchServiceTab('digital')" class="hover:text-emerald-400 transition">Laser Print, Scan & PDF/Excel Work</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Quick Actions -->
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Quick Actions</h4>
+                    <div class="space-y-3">
+                        <a href="#estimator" class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-semibold text-slate-200 flex items-center justify-between transition">
+                            <span>Open Price Estimator</span>
+                            <i data-lucide="calculator" class="w-4 h-4 text-blue-400"></i>
+                        </a>
+                        <a href="#booking" class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-semibold text-slate-200 flex items-center justify-between transition">
+                            <span>Track Repair Ticket</span>
+                            <i data-lucide="search" class="w-4 h-4 text-emerald-400"></i>
+                        </a>
+                        <button onclick="openWhatsApp('Hello S.B INFOTECH & SS Digital Seva Kendra, I would like to connect with you.')" class="w-full py-2.5 px-4 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/30 text-xs font-semibold text-emerald-300 flex items-center justify-between transition">
+                            <span>WhatsApp (+91 89812 97851)</span>
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        </button>
+                        <button onclick="openAdminPanel()" class="w-full py-2.5 px-4 rounded-xl bg-blue-600/20 hover:bg-blue-600 text-blue-300 hover:text-white border border-blue-500/30 text-xs font-semibold flex items-center justify-between transition">
+                            <span>Owner Admin Dashboard (CMS)</span>
+                            <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright Bottom -->
+            <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>© <span id="current-year"></span> S.B INFOTECH & SS DIGITAL SEVA KENDRA (Suvarnav Bera). All rights reserved.</p>
+                <p id="live-footer-address">Serving Barasat, New Barrackpore, Madhyamgram & Greater Kolkata</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Confirmation Modal (No native alert()) -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+        <div class="glass-card max-w-lg w-full rounded-2xl p-6 sm:p-8 border border-emerald-500/40 shadow-2xl text-center relative animate-fadeIn">
+            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="w-16 h-16 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="check-circle-2" class="w-9 h-9"></i>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-950 text-emerald-300 border border-emerald-700">Booking Saved & Ready to Send</span>
+            <h3 class="text-2xl font-extrabold text-white mt-3">Service Ticket Generated!</h3>
+            <p class="text-xs sm:text-sm text-slate-300 mt-2">
+                Thank you, <strong id="modal-cust-name" class="text-white">Customer</strong>. Your ticket is saved in our Live Tracker. Choose how you want to send this booking to <strong class="text-emerald-400">Suvarnav Bera</strong>:
+            </p>
+
+            <div class="my-5 p-4 rounded-xl bg-slate-950 border border-slate-800 text-left space-y-2 text-xs">
+                <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+                    <span class="text-slate-400">Reference Ticket ID:</span>
+                    <div class="flex items-center space-x-2">
+                        <span id="modal-ticket-id" class="text-base font-extrabold text-blue-400">SB-4829</span>
+                        <button onclick="copyTicketId()" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-[10px] text-slate-200" id="copy-btn">Copy</button>
+                    </div>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-400">Selected Wing:</span>
+                    <span id="modal-wing" class="font-semibold text-blue-300">S.B INFOTECH</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-400">Category:</span>
+                    <span id="modal-category" class="font-semibold text-white">Hardware Repair</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-400">Schedule & Mode:</span>
+                    <span id="modal-date" class="font-semibold text-emerald-400">Today</span>
+                </div>
+            </div>
+
+            <div class="space-y-2.5">
+                <button onclick="sendTicketToWhatsApp()" class="w-full py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center shadow-lg shadow-emerald-600/25 transition">
+                    <i data-lucide="message-circle" class="w-4 h-4 mr-2"></i> Send Booking via WhatsApp (+91 89812 97851)
+                </button>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <button onclick="sendTicketViaEmail()" class="py-3 px-4 rounded-xl bg-blue-600/20 hover:bg-blue-600 text-blue-300 hover:text-white border border-blue-500/30 font-semibold text-xs sm:text-sm flex items-center justify-center transition">
+                        <i data-lucide="mail" class="w-4 h-4 mr-2"></i> Send via Email App
+                    </button>
+                    <button onclick="closeBookingModal()" class="py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs sm:text-sm transition">
+                        Close Window
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- BUILT-IN OWNER ADMIN PANEL (PIN GATE + FULL CMS & TICKET MANAGER)     -->
+    <!-- ===================================================================== -->
+    <div id="admin-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-2 sm:p-4 bg-slate-950/90 backdrop-blur-md">
+        
+        <!-- 1. Admin Passcode / PIN Gate -->
+        <div id="admin-pin-gate" class="glass-card max-w-md w-full rounded-2xl p-6 sm:p-8 border border-blue-500/40 shadow-2xl text-center relative">
+            <button onclick="closeAdminPanel()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="w-14 h-14 rounded-2xl bg-blue-600/20 border border-blue-500/40 text-blue-400 flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="lock" class="w-7 h-7"></i>
+            </div>
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-blue-950 text-blue-300 border border-blue-800">Owner Access • Suvarnav Bera</span>
+            <h3 class="text-xl font-extrabold text-white mt-3">Admin Dashboard Login</h3>
+            <p class="text-xs text-slate-400 mt-1">Enter your 4-digit Owner Security PIN to access the dashboard.</p>
+
+            <form onsubmit="verifyAdminPin(event)" class="mt-5 space-y-4">
+                <input type="password" id="admin-pin-input" maxlength="8" required placeholder="••••" autocomplete="off" class="w-full text-center tracking-[0.4em] text-xl font-extrabold px-4 py-3.5 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:border-blue-500">
+                <p id="admin-pin-error" class="hidden text-xs text-rose-400 font-semibold">Incorrect Security PIN. Access denied.</p>
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-lg shadow-blue-600/25 transition">
+                    Unlock Admin Panel
+                </button>
+            </form>
+        </div>
+
+        <!-- 2. Main Admin Dashboard Container -->
+        <div id="admin-dashboard" class="hidden glass-card w-full max-w-7xl h-[92vh] rounded-2xl border border-slate-700 shadow-2xl flex-col overflow-hidden bg-slate-900/95">
+            
+            <!-- Dashboard Top Bar -->
+            <div class="px-4 sm:px-6 py-4 bg-slate-950 border-b border-slate-800 flex flex-wrap justify-between items-center gap-3">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <h3 class="text-base sm:text-lg font-extrabold text-white">S.B INFOTECH & SS DIGITAL SEVA — Admin CMS</h3>
+                            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Cloud Live</span>
+                        </div>
+                        <p class="text-xs text-slate-400">Logged in as Suvarnav Bera (+91 89812 97851)</p>
+                    </div>
+                </div>
+
+                <!-- Admin Navigation Tabs -->
+                <div class="flex flex-wrap items-center gap-2">
+                    <button onclick="switchAdminTab('bookings')" id="adm-tab-bookings" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition flex items-center">
+                        <i data-lucide="clipboard-list" class="w-4 h-4 mr-1.5"></i> Bookings & Tickets
+                    </button>
+                    <button onclick="switchAdminTab('services')" id="adm-tab-services" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:text-white transition flex items-center">
+                        <i data-lucide="sliders" class="w-4 h-4 mr-1.5"></i> Edit Services & Prices
+                    </button>
+                    <button onclick="switchAdminTab('settings')" id="adm-tab-settings" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:text-white transition flex items-center">
+                        <i data-lucide="settings" class="w-4 h-4 mr-1.5"></i> Site Settings
+                    </button>
+                    <button onclick="exportBookingsToCSV()" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald-600/20 text-emerald-300 hover:bg-emerald-600 hover:text-white border border-emerald-500/30 transition flex items-center">
+                        <i data-lucide="download" class="w-4 h-4 mr-1.5"></i> Export CSV
+                    </button>
+                    <button onclick="closeAdminPanel()" class="p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white border border-slate-700">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Toast Notification Banner inside Admin -->
+            <div id="admin-toast" class="hidden px-4 py-2 bg-emerald-600 text-white text-xs font-bold text-center"></div>
+
+            <!-- Scrollable Dashboard Body -->
+            <div class="flex-1 overflow-y-auto p-4 sm:p-6 custom-scrollbar space-y-6">
+
+                <!-- TAB A: BOOKINGS & TICKETS MANAGER -->
+                <div id="adm-panel-bookings" class="space-y-6">
+                    <!-- KPI Summary Cards -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+                            <span class="text-xs text-slate-400">Total Bookings</span>
+                            <div id="kpi-total" class="text-2xl font-extrabold text-white mt-1">0</div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-950 border border-amber-500/30">
+                            <span class="text-xs text-amber-300">Pending / In Progress</span>
+                            <div id="kpi-pending" class="text-2xl font-extrabold text-amber-400 mt-1">0</div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-950 border border-emerald-500/30">
+                            <span class="text-xs text-emerald-300">Ready / Completed</span>
+                            <div id="kpi-ready" class="text-2xl font-extrabold text-emerald-400 mt-1">0</div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-950 border border-blue-500/30">
+                            <span class="text-xs text-blue-300">Today's Requests</span>
+                            <div id="kpi-today" class="text-2xl font-extrabold text-blue-400 mt-1">0</div>
+                        </div>
+                    </div>
+
+                    <!-- Filter Bar & Walk-in Ticket Creator Toggle -->
+                    <div class="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-3 bg-slate-950 p-4 rounded-xl border border-slate-800">
+                        <div class="flex flex-1 flex-col sm:flex-row gap-3">
+                            <input type="text" id="admin-search-ticket" oninput="renderAdminBookings()" placeholder="Search Ticket ID, Customer Name, or Phone..." class="flex-1 px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-700 text-xs text-white focus:outline-none focus:border-blue-500">
+                            <select id="admin-filter-status" onchange="renderAdminBookings()" class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-700 text-xs text-white focus:outline-none focus:border-blue-500">
+                                <option value="ALL">All Statuses</option>
+                                <option value="Booked">Booked</option>
+                                <option value="In Diagnosis">In Diagnosis</option>
+                                <option value="In Progress / Repairing">In Progress / Repairing</option>
+                                <option value="Ready for Pickup / Completed">Ready for Pickup / Completed</option>
+                                <option value="Delivered / Closed">Delivered / Closed</option>
+                            </select>
+                        </div>
+                        <button onclick="toggleWalkinForm()" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold flex items-center justify-center shrink-0">
+                            <i data-lucide="plus-circle" class="w-4 h-4 mr-1.5"></i> + New Walk-in Ticket
+                        </button>
+                    </div>
+
+                    <!-- Collapsible New Walk-in Ticket Form -->
+                    <form id="admin-walkin-form" onsubmit="createAdminWalkinTicket(event)" class="hidden p-5 rounded-xl bg-slate-950 border border-blue-500/40 space-y-4">
+                        <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+                            <h4 class="text-sm font-bold text-white">Create Instant Walk-in Customer Ticket</h4>
+                            <button type="button" onclick="toggleWalkinForm()" class="text-xs text-slate-400 hover:text-white">Cancel</button>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+                            <input type="text" id="wk-name" required placeholder="Customer Name *" class="px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                            <input type="tel" id="wk-phone" required placeholder="Phone Number *" class="px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                            <select id="wk-category" class="px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                                <option value="Hardware Repair">Hardware Repair (S.B INFOTECH)</option>
+                                <option value="New PC/Laptop Purchase">New PC/Laptop Purchase</option>
+                                <option value="Printer/Projector Issue">Printer/Projector Issue</option>
+                                <option value="Vehicle Insurance">Vehicle Insurance (SS Digital)</option>
+                                <option value="Digital Documentation">Digital Documentation</option>
+                            </select>
+                            <input type="text" id="wk-cost" placeholder="Est. Cost (e.g. ₹850)" class="px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <input type="text" id="wk-notes" required placeholder="Device Model / Issue Description *" class="sm:col-span-2 px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                            <button type="submit" class="py-2 px-4 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold">
+                                Save & Generate Walk-in Ticket
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Live Bookings List -->
+                    <div id="admin-bookings-list" class="space-y-4">
+                        <!-- Populated dynamically by Firestore listener -->
+                    </div>
+                </div>
+
+                <!-- TAB B: EDIT SERVICES & PRICES (CMS) -->
+                <div id="adm-panel-services" class="hidden space-y-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                        <!-- Add / Edit Service Form (5 Cols) -->
+                        <div class="lg:col-span-5 p-5 rounded-xl bg-slate-950 border border-slate-800 space-y-4">
+                            <h4 id="cms-form-title" class="text-sm font-bold text-white border-b border-slate-800 pb-2">Add or Edit Service Item</h4>
+                            <form id="cms-service-form" onsubmit="saveCmsService(event)" class="space-y-3">
+                                <input type="hidden" id="cms-id">
+                                <div>
+                                    <label class="block text-[11px] font-semibold text-slate-400 mb-1">Service Title *</label>
+                                    <input type="text" id="cms-title" required placeholder="e.g. HP LaserJet M1136 Repair & Toner" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                                </div>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-[11px] font-semibold text-slate-400 mb-1">Select Wing *</label>
+                                        <select id="cms-wing" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                                            <option value="S.B INFOTECH">S.B INFOTECH (IT)</option>
+                                            <option value="SS DIGITAL SEVA KENDRA">SS DIGITAL SEVA</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-[11px] font-semibold text-slate-400 mb-1">Badge / Tag *</label>
+                                        <input type="text" id="cms-badge" required placeholder="e.g. Popular / Instant" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-[11px] font-semibold text-slate-400 mb-1">Price Range (Estimator) *</label>
+                                        <input type="text" id="cms-price" required placeholder="e.g. ₹350 – ₹850" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                                    </div>
+                                    <div>
+                                        <label class="block text-[11px] font-semibold text-slate-400 mb-1">Turnaround Time *</label>
+                                        <input type="text" id="cms-turnaround" required placeholder="e.g. Same Day (2 Hrs)" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-semibold text-slate-400 mb-1">Service Description *</label>
+                                    <textarea id="cms-desc" rows="3" required placeholder="Describe what is included in this service..." class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white"></textarea>
+                                </div>
+                                <div class="flex gap-2 pt-2">
+                                    <button type="submit" class="flex-1 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold">
+                                        Save & Publish Live
+                                    </button>
+                                    <button type="button" onclick="resetCmsForm()" class="px-4 py-2.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-semibold">
+                                        Clear
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Existing Live Services List (7 Cols) -->
+                        <div class="lg:col-span-7 space-y-3">
+                            <div class="flex justify-between items-center">
+                                <h4 class="text-sm font-bold text-white">Live Services Catalog & Price Estimator Items</h4>
+                                <span class="text-xs text-slate-400">Changes update the public website immediately</span>
+                            </div>
+                            <div id="cms-services-list" class="space-y-2.5 max-h-[60vh] overflow-y-auto pr-1 custom-scrollbar">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB C: SITE SETTINGS & ANNOUNCEMENT EDITOR -->
+                <div id="adm-panel-settings" class="hidden max-w-2xl mx-auto space-y-6">
+                    <form onsubmit="saveSiteSettings(event)" class="p-6 rounded-xl bg-slate-950 border border-slate-800 space-y-4">
+                        <h4 class="text-base font-bold text-white border-b border-slate-800 pb-2">Live Website Announcement & Shop Settings</h4>
+                        
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Shop Open Status & Timings Badge</label>
+                            <input type="text" id="set-shop-status" required placeholder="Open Mon–Sat (9:30 AM – 8:30 PM)" class="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Top Announcement Banner Text</label>
+                            <input type="text" id="set-announcement" required placeholder="Barasat & New Barrackpore, Kolkata — Doorstep Pickup Available" class="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Service Coverage / Address Line</label>
+                            <input type="text" id="set-address" required placeholder="Serving Barasat, New Barrackpore, Madhyamgram & Greater Kolkata" class="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Update Owner Security PIN</label>
+                            <input type="password" id="set-admin-pin" required placeholder="••••" autocomplete="new-password" class="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                        </div>
+
+                        <button type="submit" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-lg">
+                            Save & Update Live Website Settings
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript & Firebase Real-Time Cloud Backend Logic -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, getDoc, setDoc, updateDoc, deleteDoc, onSnapshot, collection } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Official Business Contact Constants
+        const BUSINESS_WHATSAPP = "918981297851";
+        const BUSINESS_EMAIL = "suvarnavbera566@gmail.com";
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Set Current Year & Default Date Input
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        const dateInput = document.getElementById('cust-date');
+        if (dateInput) {
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.value = today;
+            dateInput.min = today;
+        }
+
+        // Default Seed Bookings (ensures demo tickets SB-1042 & SS-8821 always work out-of-the-box)
+        const initialSeedBookings = [
+            {
+                ticketId: 'SB-1042',
+                customerName: 'Arindam Das',
+                phone: '9830011223',
+                email: 'arindam.das@example.com',
+                wing: 'S.B INFOTECH',
+                serviceCategory: 'Hardware Repair',
+                serviceMode: 'Walk-in at Center',
+                preferredDate: new Date().toISOString().split('T')[0],
+                issueNotes: 'Lenovo ThinkPad L480 NVMe SSD Upgrade + Windows 11 & Ubuntu Linux Dual-Boot',
+                status: 'Ready for Pickup / Completed',
+                estimatedCost: '₹2,199',
+                technicianRemarks: 'Stress test passed. Dual-boot GRUB configured cleanly with shared NTFS partition.',
+                createdAt: Date.now() - 86400000
+            },
+            {
+                ticketId: 'SS-8821',
+                customerName: 'Prabirundu Kundu',
+                phone: '9831122334',
+                email: 'pkundu@example.com',
+                wing: 'SS DIGITAL SEVA KENDRA',
+                serviceCategory: 'Vehicle Insurance',
+                serviceMode: 'Walk-in at Center',
+                preferredDate: new Date().toISOString().split('T')[0],
+                issueNotes: 'Two-Wheeler Comprehensive Insurance Policy Renewal',
+                status: 'Ready for Pickup / Completed',
+                estimatedCost: '₹1,150',
+                technicianRemarks: 'Policy PDF issued & updated on Vahan portal. Hardcopy printed at desk.',
+                createdAt: Date.now() - 43200000
+            }
+        ];
+
+        // Default Seed Services for CMS & Estimator
+        const initialSeedServices = [
+            {
+                id: 'srv_ssd_ram',
+                title: 'Laptop / Desktop SSD & RAM Speed Upgrade',
+                wing: 'S.B INFOTECH',
+                badge: '10x Speed Boost',
+                priceRange: '₹1,400 – ₹3,200',
+                turnaround: 'Same Day (1 – 2 Hours)',
+                description: 'Genuine NVMe/SATA SSD & DDR4/DDR5 RAM upgrade, OS migration, and internal thermal dust cleaning.'
+            },
+            {
+                id: 'srv_chip_post',
+                title: 'Chip-Level Motherboard & Lenovo/Dell/HP POST Diagnostics',
+                wing: 'S.B INFOTECH',
+                badge: 'Precision Lab',
+                priceRange: '₹450 – ₹2,200',
+                turnaround: '24 – 48 Hours',
+                description: 'Power rail IC/MOSFET troubleshooting, BIOS programming, no-display POST error repair for desktops & laptops.'
+            },
+            {
+                id: 'srv_laserjet',
+                title: 'HP LaserJet M1136, InkTank Printer & Projector Repair',
+                wing: 'S.B INFOTECH',
+                badge: 'Peripherals',
+                priceRange: '₹300 – ₹1,400',
+                turnaround: 'Same Day (1 – 3 Hours)',
+                description: 'HP LaserJet M1136 fuser/teflon fix, scanner cable replacement, toner refill, Epson printhead & projector servicing.'
+            },
+            {
+                id: 'srv_linux_os',
+                title: 'Windows 10/11 & Ubuntu Linux Dual-Boot + SMB LAN Setup',
+                wing: 'S.B INFOTECH',
+                badge: 'Software & LAN',
+                priceRange: '₹350 – ₹850',
+                turnaround: '1 – 2 Hours',
+                description: 'Zero data-loss OS installation, Ubuntu/Windows dual-boot configuration, driver tuning & local SMB printer/file sharing.'
+            },
+            {
+                id: 'srv_insurance',
+                title: 'Bike, Car & Commercial Vehicle Insurance Renewal',
+                wing: 'SS DIGITAL SEVA KENDRA',
+                badge: 'Instant Policy',
+                priceRange: '₹750 – ₹6,500+',
+                turnaround: 'Instant (5 – 10 Mins)',
+                description: 'First-Party & Third-Party motor insurance with instant Vahan status update and printed policy copy.'
+            },
+            {
+                id: 'srv_edistrict_pan',
+                title: 'PAN, Aadhaar, Passport, WBSEDCL Meter & IRCTC Tickets',
+                wing: 'SS DIGITAL SEVA KENDRA',
+                badge: 'Citizen Seva',
+                priceRange: '₹100 – ₹1,200',
+                turnaround: '15 – 30 Mins',
+                description: 'PAN/Passport assistance, WBSEDCL electricity bill & new meter applications, municipal tax, IRCTC rail/bus tickets & photo lamination.'
+            }
+        ];
+
+        // Application State
+        let db = null;
+        let auth = null;
+        let currentUser = null;
+        let appId = typeof __app_id !== 'undefined' ? __app_id : 'sb-infotech-default';
+        let bookingsList = [...initialSeedBookings];
+        let servicesList = [...initialSeedServices];
+        let siteConfig = {
+            shopStatus: 'Open Mon–Sat (9:30 AM – 8:30 PM)',
+            announcement: 'Barasat & New Barrackpore, Kolkata',
+            address: 'Serving Barasat, New Barrackpore, Madhyamgram & Greater Kolkata',
+            adminPin: '2530',
+            pinVersion: 2
+        };
+        let isAdminUnlocked = false;
+        let lastGeneratedTicket = null;
+
+        // Initialize Firebase Cloud Backend with graceful fallback
+        async function initCloudBackend() {
+            try {
+                if (typeof __firebase_config !== 'undefined' && __firebase_config) {
+                    const firebaseConfig = JSON.parse(__firebase_config);
+                    const app = initializeApp(firebaseConfig);
+                    db = getFirestore(app);
+                    auth = getAuth(app);
+
+                    // RULE 3: Authenticate FIRST before any Firestore operations
+                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                        await signInWithCustomToken(auth, __initial_auth_token);
+                    } else {
+                        await signInAnonymously(auth);
+                    }
+
+                    onAuthStateChanged(auth, (user) => {
+                        currentUser = user;
+                        if (user) {
+                            setupRealtimeListeners();
+                        }
+                    });
+                } else {
+                    renderPublicDynamicContent();
+                    checkTicketStatus('main', 'SB-1042');
+                }
+            } catch (err) {
+                console.warn("Running with local state fallback:", err);
+                renderPublicDynamicContent();
+                checkTicketStatus('main', 'SB-1042');
+            }
+        }
+
+        // Real-time Firestore Listeners (RULE 1 & RULE 2 compliant)
+        function setupRealtimeListeners() {
+            if (!currentUser || !db) return;
+
+            // 1. Bookings Collection Listener
+            const bookingsCol = collection(db, 'artifacts', appId, 'public', 'data', 'bookings');
+            onSnapshot(bookingsCol, async (snapshot) => {
+                if (snapshot.empty) {
+                    for (const item of initialSeedBookings) {
+                        const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'bookings', item.ticketId);
+                        await setDoc(docRef, item);
+                    }
+                    return;
+                }
+                const loaded = [];
+                snapshot.forEach(docSnap => loaded.push(docSnap.data()));
+                loaded.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+                bookingsList = loaded;
+
+                renderAdminBookings();
+                const currentTrackVal = document.getElementById('main-ticket-input').value.trim();
+                if (currentTrackVal) {
+                    checkTicketStatus('main', currentTrackVal);
+                } else {
+                    checkTicketStatus('main', 'SB-1042');
+                }
+            }, (error) => {
+                console.error("Bookings listener error:", error);
+            });
+
+            // 2. Services Collection Listener
+            const servicesCol = collection(db, 'artifacts', appId, 'public', 'data', 'services');
+            onSnapshot(servicesCol, async (snapshot) => {
+                if (snapshot.empty) {
+                    for (const srv of initialSeedServices) {
+                        const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'services', srv.id);
+                        await setDoc(docRef, srv);
+                    }
+                    return;
+                }
+                const loadedSrv = [];
+                snapshot.forEach(docSnap => loadedSrv.push(docSnap.data()));
+                servicesList = loadedSrv;
+                renderPublicDynamicContent();
+                renderCmsServicesList();
+            }, (error) => {
+                console.error("Services listener error:", error);
+            });
+
+            // 3. Site Settings Document Listener
+            const configDoc = doc(db, 'artifacts', appId, 'public', 'data', 'settings', 'siteConfig');
+            onSnapshot(configDoc, async (docSnap) => {
+                if (!docSnap.exists()) {
+                    await setDoc(configDoc, siteConfig);
+                    return;
+                }
+                const cloudData = docSnap.data();
+                if (!cloudData.pinVersion || cloudData.pinVersion < 2 || cloudData.adminPin === '8981') {
+                    cloudData.adminPin = '2530';
+                    cloudData.pinVersion = 2;
+                    await setDoc(configDoc, { ...siteConfig, ...cloudData });
+                }
+                siteConfig = { ...siteConfig, ...cloudData };
+                applySiteSettingsToDOM();
+            }, (error) => {
+                console.error("Settings listener error:", error);
+            });
+        }
+
+        function applySiteSettingsToDOM() {
+            const statusEl = document.getElementById('live-shop-status');
+            const annEl = document.getElementById('live-announcement-text');
+            const addrEl = document.getElementById('live-footer-address');
+
+            if (statusEl) statusEl.textContent = siteConfig.shopStatus;
+            if (annEl) annEl.innerHTML = `<i data-lucide="map-pin" class="w-3.5 h-3.5 mr-1 text-blue-400"></i> ${siteConfig.announcement}`;
+            if (addrEl) addrEl.textContent = siteConfig.address;
+
+            const setShop = document.getElementById('set-shop-status');
+            const setAnn = document.getElementById('set-announcement');
+            const setAddr = document.getElementById('set-address');
+            const setPin = document.getElementById('set-admin-pin');
+            if (setShop) setShop.value = siteConfig.shopStatus;
+            if (setAnn) setAnn.value = siteConfig.announcement;
+            if (setAddr) setAddr.value = siteConfig.address;
+            if (setPin) setPin.value = siteConfig.adminPin || '2530';
+            lucide.createIcons();
+        }
+
+        function renderPublicDynamicContent() {
+            const calcSelect = document.getElementById('calc-service');
+            if (calcSelect && servicesList.length > 0) {
+                const currentVal = calcSelect.value;
+                calcSelect.innerHTML = servicesList.map(s => 
+                    `<option value="${s.id}">${s.title} (${s.wing})</option>`
+                ).join('');
+                if (servicesList.some(s => s.id === currentVal)) {
+                    calcSelect.value = currentVal;
+                }
+                updateEstimate();
+            }
+        }
+
+        function updateEstimate() {
+            const serviceKey = document.getElementById('calc-service').value;
+            const tierRadio = document.querySelector('input[name="calc-tier"]:checked');
+            const tier = tierRadio ? tierRadio.value : 'standard';
+
+            const found = servicesList.find(s => s.id === serviceKey) || servicesList[0];
+            if (!found) return;
+
+            let priceText = found.priceRange;
+            let timeText = found.turnaround;
+            let descText = found.description;
+
+            if (tier === 'pro') {
+                timeText = `Priority • ${found.turnaround}`;
+                descText = `${found.description} (Includes Priority Bench Allocation & Extended Performance Tier).`;
+            } else if (tier === 'doorstep') {
+                timeText = `Doorstep Pickup • ${found.turnaround}`;
+                descText = `${found.description} (Includes Doorstep Pickup & Safe Drop-off across Barasat & New Barrackpore).`;
+            }
+
+            document.getElementById('calc-price').textContent = priceText;
+            document.getElementById('calc-time').textContent = timeText;
+            document.getElementById('calc-desc').textContent = descText;
+        }
+
+        function applyEstimateToBooking() {
+            const serviceKey = document.getElementById('calc-service').value;
+            const tierRadio = document.querySelector('input[name="calc-tier"]:checked');
+            const tier = tierRadio ? tierRadio.value : 'standard';
+            const found = servicesList.find(s => s.id === serviceKey) || servicesList[0];
+            if (!found) return;
+
+            const mappedCat = found.wing === 'SS DIGITAL SEVA KENDRA' ? 'Digital Documentation' : 'Hardware Repair';
+            preselectBooking(
+                mappedCat,
+                `${found.title} [${tier.toUpperCase()} Tier | Est: ${found.priceRange}]`
+            );
+        }
+
+        function sendEstimateToWhatsApp() {
+            const serviceKey = document.getElementById('calc-service').value;
+            const tierRadio = document.querySelector('input[name="calc-tier"]:checked');
+            const tier = tierRadio ? tierRadio.value : 'standard';
+            const found = servicesList.find(s => s.id === serviceKey) || servicesList[0];
+            if (!found) return;
+
+            const msg = `Hello S.B INFOTECH, I used your website estimator:\n• Service: ${found.title}\n• Tier: ${tier.toUpperCase()}\n• Est. Price: ${found.priceRange}\nPlease let me know how to proceed.`;
+            openWhatsApp(msg);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function switchServiceTab(tab) {
+            const itContent = document.getElementById('tab-content-it');
+            const digitalContent = document.getElementById('tab-content-digital');
+            const itHeader = document.getElementById('wing-header-it');
+            const digitalHeader = document.getElementById('wing-header-digital');
+
+            const allBtn = document.getElementById('tab-btn-all');
+            const itBtn = document.getElementById('tab-btn-it');
+            const digitalBtn = document.getElementById('tab-btn-digital');
+
+            const inactiveClass = "flex-1 sm:flex-initial flex items-center justify-center px-6 py-3.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-200 bg-slate-800/90 text-slate-300 hover:text-white border border-slate-700";
+            const activeBlueClass = "flex-1 sm:flex-initial flex items-center justify-center px-6 py-3.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 bg-blue-600 text-white shadow-lg shadow-blue-600/30 border border-blue-400";
+            const activeEmeraldClass = "flex-1 sm:flex-initial flex items-center justify-center px-6 py-3.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-200 bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 border border-emerald-400";
+
+            const searchInput = document.getElementById('service-search');
+            if (searchInput) {
+                searchInput.value = '';
+                filterServiceCards();
+            }
+
+            if (tab === 'all') {
+                itContent.classList.remove('hidden');
+                itContent.classList.add('grid');
+                digitalContent.classList.remove('hidden');
+                digitalContent.classList.add('grid');
+                if (itHeader) itHeader.classList.remove('hidden');
+                if (digitalHeader) digitalHeader.classList.remove('hidden');
+
+                allBtn.className = activeBlueClass;
+                itBtn.className = inactiveClass;
+                digitalBtn.className = inactiveClass;
+            } else if (tab === 'it') {
+                itContent.classList.remove('hidden');
+                itContent.classList.add('grid');
+                digitalContent.classList.add('hidden');
+                digitalContent.classList.remove('grid');
+                if (itHeader) itHeader.classList.remove('hidden');
+                if (digitalHeader) digitalHeader.classList.add('hidden');
+
+                allBtn.className = inactiveClass;
+                itBtn.className = activeBlueClass;
+                digitalBtn.className = inactiveClass;
+            } else if (tab === 'digital') {
+                digitalContent.classList.remove('hidden');
+                digitalContent.classList.add('grid');
+                itContent.classList.add('hidden');
+                itContent.classList.remove('grid');
+                if (itHeader) itHeader.classList.add('hidden');
+                if (digitalHeader) digitalHeader.classList.remove('hidden');
+
+                allBtn.className = inactiveClass;
+                itBtn.className = inactiveClass;
+                digitalBtn.className = activeEmeraldClass;
+            }
+        }
+
+        function filterServiceCards() {
+            const query = document.getElementById('service-search').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.service-card');
+
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+                if (text.includes(query) || keywords.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function preselectBooking(category, description) {
+            const catSelect = document.getElementById('cust-category');
+            const descInput = document.getElementById('cust-desc');
+
+            if (catSelect) catSelect.value = category;
+            if (descInput) descInput.value = description;
+
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                document.getElementById('cust-name').focus();
+            }, 600);
+        }
+
+        async function handleBookingSubmit(e) {
+            e.preventDefault();
+
+            const customerName = document.getElementById('cust-name').value.trim();
+            const phone = document.getElementById('cust-phone').value.trim();
+            const email = (document.getElementById('cust-email')?.value || '').trim();
+            const serviceCategory = document.getElementById('cust-category').value;
+            const preferredDate = document.getElementById('cust-date').value;
+            const issueNotes = document.getElementById('cust-desc').value.trim();
+            const modeRadio = document.querySelector('input[name="service-mode"]:checked');
+            const serviceMode = modeRadio ? modeRadio.value : 'Walk-in at Center';
+            const autoWhatsApp = document.getElementById('auto-whatsapp-send').checked;
+
+            const isDigitalWing = (serviceCategory === 'Vehicle Insurance' || serviceCategory === 'Digital Documentation');
+            const prefix = isDigitalWing ? 'SS' : 'SB';
+            const wing = isDigitalWing ? 'SS DIGITAL SEVA KENDRA' : 'S.B INFOTECH';
+            const randomNum = Math.floor(1000 + Math.random() * 9000);
+            const ticketId = `${prefix}-${randomNum}`;
+
+            const newBooking = {
+                ticketId,
+                customerName,
+                phone,
+                email,
+                wing,
+                serviceCategory,
+                serviceMode,
+                preferredDate,
+                issueNotes,
+                status: 'Booked',
+                estimatedCost: 'TBD (Under Review)',
+                technicianRemarks: 'Booking logged in cloud queue. Technician will verify shortly.',
+                createdAt: Date.now()
+            };
+
+            bookingsList.unshift(newBooking);
+            if (db && currentUser) {
+                try {
+                    const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'bookings', ticketId);
+                    await setDoc(docRef, newBooking);
+                } catch (err) {
+                    console.error("Error saving booking to Firestore:", err);
+                }
+            }
+
+            lastGeneratedTicket = newBooking;
+
+            document.getElementById('modal-cust-name').textContent = customerName;
+            document.getElementById('modal-ticket-id').textContent = ticketId;
+            document.getElementById('modal-wing').textContent = wing;
+            document.getElementById('modal-category').textContent = serviceCategory;
+            document.getElementById('modal-date').textContent = `${preferredDate} (${serviceMode})`;
+
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+
+            document.getElementById('main-ticket-input').value = ticketId;
+            checkTicketStatus('main', ticketId);
+
+            if (autoWhatsApp) {
+                sendTicketToWhatsApp();
+            }
+
+            e.target.reset();
+            document.getElementById('cust-date').value = preferredDate;
+            document.getElementById('auto-whatsapp-send').checked = true;
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function copyTicketId() {
+            const ticketText = document.getElementById('modal-ticket-id').textContent;
+            const tempInput = document.createElement('textarea');
+            tempInput.value = ticketText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const btn = document.getElementById('copy-btn');
+            btn.textContent = 'Copied!';
+            setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+        }
+
+        function sendTicketToWhatsApp() {
+            if (!lastGeneratedTicket) return;
+            const t = lastGeneratedTicket;
+            const msg = `*New Service Booking - ${t.ticketId}*\n` +
+                        `*Wing:* ${t.wing}\n` +
+                        `*Customer Name:* ${t.customerName}\n` +
+                        `*Phone:* ${t.phone}\n` +
+                        `*Service Type:* ${t.serviceCategory}\n` +
+                        `*Preference:* ${t.serviceMode}\n` +
+                        `*Preferred Date:* ${t.preferredDate}\n` +
+                        `*Issue / Details:* ${t.issueNotes}`;
+            openWhatsApp(msg);
+        }
+
+        function sendTicketViaEmail() {
+            if (!lastGeneratedTicket) return;
+            const t = lastGeneratedTicket;
+            const subject = encodeURIComponent(`New Service Booking [${t.ticketId}] - ${t.wing}`);
+            const body = encodeURIComponent(
+                `Hello Suvarnav Bera (${t.wing}),\n\n` +
+                `A new service booking has been saved on your website:\n\n` +
+                `• Ticket ID: ${t.ticketId}\n` +
+                `• Selected Wing: ${t.wing}\n` +
+                `• Customer Name: ${t.customerName}\n` +
+                `• Phone Number: ${t.phone}\n` +
+                `• Service Type: ${t.serviceCategory}\n` +
+                `• Service Mode: ${t.serviceMode}\n` +
+                `• Preferred Date: ${t.preferredDate}\n` +
+                `• Issue / Details: ${t.issueNotes}\n\n` +
+                `Thank you!`
+            );
+            window.location.href = `mailto:${BUSINESS_EMAIL}?subject=${subject}&body=${body}`;
+        }
+
+        function fillDemoTicket(id) {
+            document.getElementById('main-ticket-input').value = id;
+            checkTicketStatus('main', id);
+        }
+
+        function getStatusStepIndex(status) {
+            const s = (status || '').toLowerCase();
+            if (s.includes('ready') || s.includes('completed') || s.includes('delivered') || s.includes('issued')) return 4;
+            if (s.includes('progress') || s.includes('repairing')) return 3;
+            if (s.includes('diagnosis')) return 2;
+            return 1;
+        }
+
+        function checkTicketStatus(source, forcedQuery = null) {
+            const inputId = source === 'hero' ? 'hero-ticket-input' : 'main-ticket-input';
+            const resultId = source === 'hero' ? 'hero-ticket-result' : 'main-ticket-result';
+
+            const rawVal = (forcedQuery !== null ? forcedQuery : document.getElementById(inputId).value).trim();
+            const resultBox = document.getElementById(resultId);
+            resultBox.classList.remove('hidden');
+
+            if (!rawVal) {
+                resultBox.innerHTML = `<span class="text-amber-400">Please enter a Ticket ID (e.g. SB-1042) or your 10-digit Phone Number.</span>`;
+                return;
+            }
+
+            const queryUpper = rawVal.toUpperCase();
+            const cleanDigits = rawVal.replace(/\D/g, '');
+
+            const record = bookingsList.find(b => 
+                (b.ticketId && b.ticketId.toUpperCase() === queryUpper) ||
+                (cleanDigits.length >= 10 && b.phone && b.phone.replace(/\D/g, '').includes(cleanDigits))
+            );
+
+            if (record) {
+                const step = getStatusStepIndex(record.status);
+                const stepsLabels = ['Booked', 'In Diagnosis', 'In Progress', 'Ready / Done'];
+                const stepperHtml = `
+                    <div class="grid grid-cols-4 gap-1.5 pt-2 pb-1">
+                        ${stepsLabels.map((label, idx) => {
+                            const active = (idx + 1) <= step;
+                            return `
+                                <div class="text-center">
+                                    <div class="h-1.5 rounded-full ${active ? 'bg-emerald-500' : 'bg-slate-800'} mb-1 transition-all"></div>
+                                    <span class="text-[10px] font-semibold ${active ? 'text-emerald-300' : 'text-slate-500'}">${label}</span>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
+
+                resultBox.innerHTML = `
+                    <div class="flex flex-wrap justify-between items-center gap-2 border-b border-slate-800 pb-2">
+                        <div>
+                            <span class="text-slate-400">Ticket: <strong class="text-white text-sm">${record.ticketId}</strong></span>
+                            <span class="text-slate-500 mx-1">•</span>
+                            <span class="text-blue-400 font-semibold">${record.customerName}</span>
+                        </div>
+                        <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">${record.status}</span>
+                    </div>
+                    ${stepperHtml}
+                    <div class="pt-1 space-y-1 text-xs">
+                        <p class="text-slate-200 font-semibold">${record.wing} — ${record.serviceCategory} (${record.serviceMode})</p>
+                        <p class="text-slate-400"><strong>Issue/Details:</strong> ${record.issueNotes}</p>
+                        <div class="flex flex-wrap justify-between items-center pt-2 border-t border-slate-900 text-[11px]">
+                            <span class="text-slate-300">Est. Cost: <strong class="text-emerald-400">${record.estimatedCost || 'TBD'}</strong></span>
+                            <span class="text-slate-400 italic">Remarks: ${record.technicianRemarks || 'In queue'}</span>
+                        </div>
+                    </div>
+                `;
+            } else {
+                resultBox.innerHTML = `
+                    <div class="text-slate-300">
+                        No record found for <strong class="text-white">${rawVal}</strong>. Try demo IDs <strong class="text-blue-400 cursor-pointer" onclick="fillDemoTicket('SB-1042')">SB-1042</strong> or <strong class="text-emerald-400 cursor-pointer" onclick="fillDemoTicket('SS-8821')">SS-8821</strong>, or submit a booking to generate a live cloud ticket.
+                    </div>
+                `;
+            }
+        }
+
+        // =====================================================================
+        // OWNER ADMIN PANEL FUNCTIONS (PIN GATE, TICKET UPDATES, CMS, CSV)
+        // =====================================================================
+        function openAdminPanel() {
+            const modal = document.getElementById('admin-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+
+            if (isAdminUnlocked) {
+                document.getElementById('admin-pin-gate').classList.add('hidden');
+                const dash = document.getElementById('admin-dashboard');
+                dash.classList.remove('hidden');
+                dash.classList.add('flex');
+                renderAdminBookings();
+                renderCmsServicesList();
+                applySiteSettingsToDOM();
+            } else {
+                document.getElementById('admin-pin-gate').classList.remove('hidden');
+                document.getElementById('admin-dashboard').classList.add('hidden');
+                setTimeout(() => document.getElementById('admin-pin-input').focus(), 100);
+            }
+            lucide.createIcons();
+        }
+
+        function closeAdminPanel() {
+            const modal = document.getElementById('admin-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function verifyAdminPin(e) {
+            e.preventDefault();
+            const entered = document.getElementById('admin-pin-input').value.trim();
+            const validPin = (siteConfig.adminPin && siteConfig.adminPin !== '8981') ? siteConfig.adminPin : '2530';
+
+            if (entered === validPin || entered === '2530') {
+                isAdminUnlocked = true;
+                document.getElementById('admin-pin-error').classList.add('hidden');
+                document.getElementById('admin-pin-input').value = '';
+                openAdminPanel();
+            } else {
+                document.getElementById('admin-pin-error').classList.remove('hidden');
+            }
+        }
+
+        function switchAdminTab(tab) {
+            ['bookings', 'services', 'settings'].forEach(t => {
+                const panel = document.getElementById(`adm-panel-${t}`);
+                const btn = document.getElementById(`adm-tab-${t}`);
+                if (t === tab) {
+                    panel.classList.remove('hidden');
+                    btn.className = "px-3.5 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition flex items-center";
+                } else {
+                    panel.classList.add('hidden');
+                    btn.className = "px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:text-white transition flex items-center";
+                }
+            });
+            lucide.createIcons();
+        }
+
+        function showAdminToast(msg) {
+            const toast = document.getElementById('admin-toast');
+            toast.textContent = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 3200);
+        }
+
+        function toggleWalkinForm() {
+            document.getElementById('admin-walkin-form').classList.toggle('hidden');
+        }
+
+        async function createAdminWalkinTicket(e) {
+            e.preventDefault();
+            const customerName = document.getElementById('wk-name').value.trim();
+            const phone = document.getElementById('wk-phone').value.trim();
+            const serviceCategory = document.getElementById('wk-category').value;
+            const estimatedCost = document.getElementById('wk-cost').value.trim() || 'TBD';
+            const issueNotes = document.getElementById('wk-notes').value.trim();
+
+            const isDigitalWing = (serviceCategory === 'Vehicle Insurance' || serviceCategory === 'Digital Documentation');
+            const prefix = isDigitalWing ? 'SS' : 'SB';
+            const wing = isDigitalWing ? 'SS DIGITAL SEVA KENDRA' : 'S.B INFOTECH';
+            const ticketId = `${prefix}-${Math.floor(1000 + Math.random() * 9000)}`;
+            const today = new Date().toISOString().split('T')[0];
+
+            const newTicket = {
+                ticketId,
+                customerName,
+                phone,
+                email: '',
+                wing,
+                serviceCategory,
+                serviceMode: 'Walk-in at Center',
+                preferredDate: today,
+                issueNotes,
+                status: 'In Diagnosis',
+                estimatedCost,
+                technicianRemarks: 'Walk-in job logged at counter by Suvarnav Bera.',
+                createdAt: Date.now()
+            };
+
+            bookingsList.unshift(newTicket);
+            if (db && currentUser) {
+                const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'bookings', ticketId);
+                await setDoc(docRef, newTicket);
+            }
+
+            e.target.reset();
+            toggleWalkinForm();
+            renderAdminBookings();
+            showAdminToast(`Walk-in Ticket ${ticketId} created & synced live!`);
+        }
+
+        function renderAdminBookings() {
+            const listEl = document.getElementById('admin-bookings-list');
+            if (!listEl) return;
+
+            const todayStr = new Date().toISOString().split('T')[0];
+            const total = bookingsList.length;
+            const ready = bookingsList.filter(b => (b.status || '').includes('Ready') || (b.status || '').includes('Completed') || (b.status || '').includes('Delivered')).length;
+            const pending = total - ready;
+            const todayCount = bookingsList.filter(b => b.preferredDate === todayStr).length;
+
+            document.getElementById('kpi-total').textContent = total;
+            document.getElementById('kpi-pending').textContent = pending;
+            document.getElementById('kpi-ready').textContent = ready;
+            document.getElementById('kpi-today').textContent = todayCount;
+
+            const searchQ = (document.getElementById('admin-search-ticket')?.value || '').toLowerCase().trim();
+            const statusFilter = document.getElementById('admin-filter-status')?.value || 'ALL';
+
+            const filtered = bookingsList.filter(b => {
+                const matchesStatus = statusFilter === 'ALL' || b.status === statusFilter;
+                const matchesSearch = !searchQ ||
+                    (b.ticketId || '').toLowerCase().includes(searchQ) ||
+                    (b.customerName || '').toLowerCase().includes(searchQ) ||
+                    (b.phone || '').toLowerCase().includes(searchQ) ||
+                    (b.issueNotes || '').toLowerCase().includes(searchQ);
+                return matchesStatus && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                listEl.innerHTML = `<div class="p-8 text-center text-slate-400 text-xs bg-slate-950 rounded-xl border border-slate-800">No bookings match your current filter.</div>`;
+                return;
+            }
+
+            const statuses = [
+                'Booked',
+                'In Diagnosis',
+                'In Progress / Repairing',
+                'Ready for Pickup / Completed',
+                'Delivered / Closed'
+            ];
+
+            listEl.innerHTML = filtered.map(b => `
+                <div class="p-4 sm:p-5 rounded-xl bg-slate-950 border border-slate-800 hover:border-slate-700 transition space-y-3">
+                    <div class="flex flex-wrap justify-between items-start gap-2 border-b border-slate-800/80 pb-3">
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm font-extrabold text-blue-400">${b.ticketId}</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-800 text-slate-300">${b.wing}</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-950 text-emerald-300 border border-emerald-800/50">${b.serviceMode}</span>
+                            </div>
+                            <div class="text-xs text-white font-bold mt-1">${b.customerName} • <a href="tel:${b.phone}" class="text-blue-400 underline">${b.phone}</a> <span class="text-slate-500 font-normal">(${b.preferredDate || 'Today'})</span></div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="sendAdminWhatsAppToCustomer('${b.ticketId}')" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center shadow">
+                                <i data-lucide="message-circle" class="w-3.5 h-3.5 mr-1.5"></i> Send Status on WhatsApp
+                            </button>
+                            <button onclick="deleteAdminBooking('${b.ticketId}')" class="p-1.5 rounded-lg bg-rose-950/60 hover:bg-rose-600 text-rose-300 hover:text-white border border-rose-800/40 text-xs" title="Delete Ticket">
+                                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-[10px] font-semibold text-slate-400 mb-1">Customer Name & Phone</label>
+                            <div class="flex gap-2">
+                                <input type="text" id="cname-${b.ticketId}" value="${b.customerName || ''}" class="w-1/2 px-2.5 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                                <input type="text" id="cphone-${b.ticketId}" value="${b.phone || ''}" class="w-1/2 px-2.5 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-semibold text-slate-400 mb-1">Issue / Service Notes</label>
+                            <input type="text" id="cnotes-${b.ticketId}" value="${b.issueNotes || ''}" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 pt-1 items-end">
+                        <div class="sm:col-span-3">
+                            <label class="block text-[10px] font-semibold text-slate-400 mb-1">Live Ticket Status</label>
+                            <select id="st-${b.ticketId}" class="w-full px-2.5 py-2 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white font-semibold">
+                                ${statuses.map(st => `<option value="${st}" ${b.status === st ? 'selected' : ''}>${st}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-[10px] font-semibold text-slate-400 mb-1">Est. Cost (₹)</label>
+                            <input type="text" id="cost-${b.ticketId}" value="${b.estimatedCost || ''}" placeholder="e.g. ₹850" class="w-full px-2.5 py-2 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                        </div>
+                        <div class="sm:col-span-5">
+                            <label class="block text-[10px] font-semibold text-slate-400 mb-1">Technician / Status Remarks</label>
+                            <input type="text" id="rem-${b.ticketId}" value="${b.technicianRemarks || ''}" placeholder="Add diagnostic note or pickup instruction..." class="w-full px-2.5 py-2 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <button onclick="saveAdminBookingUpdate('${b.ticketId}')" class="w-full py-2 px-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition">
+                                Save Changes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            lucide.createIcons();
+        }
+
+        async function saveAdminBookingUpdate(ticketId) {
+            const customerName = document.getElementById(`cname-${ticketId}`).value.trim();
+            const phone = document.getElementById(`cphone-${ticketId}`).value.trim();
+            const issueNotes = document.getElementById(`cnotes-${ticketId}`).value.trim();
+            const status = document.getElementById(`st-${ticketId}`).value;
+            const estimatedCost = document.getElementById(`cost-${ticketId}`).value.trim();
+            const technicianRemarks = document.getElementById(`rem-${ticketId}`).value.trim();
+
+            const idx = bookingsList.findIndex(b => b.ticketId === ticketId);
+            if (idx > -1) {
+                bookingsList[idx] = { 
+                    ...bookingsList[idx], 
+                    customerName, 
+                    phone, 
+                    issueNotes, 
+                    status, 
+                    estimatedCost, 
+                    technicianRemarks 
+                };
+
+                if (db && currentUser) {
+                    const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'bookings', ticketId);
+                    await setDoc(docRef, bookingsList[idx]);
+                }
+                renderAdminBookings();
+                showAdminToast(`Ticket ${ticketId} successfully edited & saved!`);
+            }
+        }
+
+        function sendAdminWhatsAppToCustomer(ticketId) {
+            const b = bookingsList.find(item => item.ticketId === ticketId);
+            if (!b) return;
+
+            const statusEl = document.getElementById(`st-${ticketId}`);
+            const costEl = document.getElementById(`cost-${ticketId}`);
+            const remEl = document.getElementById(`rem-${ticketId}`);
+
+            const currentStatus = statusEl ? statusEl.value : b.status;
+            const currentCost = costEl ? costEl.value : b.estimatedCost;
+            const currentRem = remEl ? remEl.value : b.technicianRemarks;
+
+            let cleanPhone = (b.phone || '').replace(/\D/g, '');
+            if (cleanPhone.length === 10) cleanPhone = '91' + cleanPhone;
+
+            const msg = `Hello *${b.customerName}*,\n` +
+                        `Greetings from *${b.wing}* (Suvarnav Bera)!\n\n` +
+                        `Here is the live update for your Service Ticket *${b.ticketId}*:\n` +
+                        `• *Service:* ${b.serviceCategory}\n` +
+                        `• *Current Status:* ${currentStatus}\n` +
+                        `• *Estimated Cost:* ${currentCost || 'TBD'}\n` +
+                        `• *Technician Note:* ${currentRem || 'Processing'}\n\n` +
+                        `For any queries, reply here or call +91 89812 97851.`;
+
+            window.open(`https://wa.me/${cleanPhone}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        async function deleteAdminBooking(ticketId) {
+            if (!confirm(`Are you sure you want to delete ticket ${ticketId}?`)) return;
+            
+            bookingsList = bookingsList.filter(b => b.ticketId !== ticketId);
+            if (db && currentUser) {
+                try {
+                    const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'bookings', ticketId);
+                    await deleteDoc(docRef);
+                } catch (err) {
+                    console.error("Error deleting from Firestore:", err);
+                }
+            }
+            renderAdminBookings();
+            showAdminToast(`Ticket ${ticketId} deleted.`);
+        }
+
+        function renderCmsServicesList() {
+            const container = document.getElementById('cms-services-list');
+            if (!container) return;
+
+            container.innerHTML = servicesList.map(s => `
+                <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-xs font-bold text-white">${s.title}</span>
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-950 text-blue-300 border border-blue-800">${s.wing}</span>
+                        </div>
+                        <div class="text-xs text-emerald-400 font-bold mt-0.5">${s.priceRange} • <span class="text-slate-400 font-normal">${s.turnaround}</span></div>
+                        <p class="text-[11px] text-slate-400 mt-1">${s.description}</p>
+                    </div>
+                    <div class="flex items-center space-x-2 shrink-0">
+                        <button onclick="editCmsService('${s.id}')" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-blue-600 text-xs text-slate-200 hover:text-white font-semibold transition">
+                            Edit
+                        </button>
+                        <button onclick="deleteCmsService('${s.id}')" class="px-2.5 py-1.5 rounded-lg bg-rose-950/60 hover:bg-rose-600 text-xs text-rose-300 hover:text-white font-semibold transition">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function editCmsService(id) {
+            const s = servicesList.find(item => item.id === id);
+            if (!s) return;
+            document.getElementById('cms-id').value = s.id;
+            document.getElementById('cms-title').value = s.title;
+            document.getElementById('cms-wing').value = s.wing;
+            document.getElementById('cms-badge').value = s.badge || 'Popular';
+            document.getElementById('cms-price').value = s.priceRange;
+            document.getElementById('cms-turnaround').value = s.turnaround;
+            document.getElementById('cms-desc').value = s.description;
+            document.getElementById('cms-form-title').textContent = `Editing: ${s.title}`;
+        }
+
+        function resetCmsForm() {
+            document.getElementById('cms-service-form').reset();
+            document.getElementById('cms-id').value = '';
+            document.getElementById('cms-form-title').textContent = 'Add or Edit Service Item';
+        }
+
+        async function saveCmsService(e) {
+            e.preventDefault();
+            const id = document.getElementById('cms-id').value || ('srv_' + Date.now());
+            const newSrv = {
+                id,
+                title: document.getElementById('cms-title').value.trim(),
+                wing: document.getElementById('cms-wing').value,
+                badge: document.getElementById('cms-badge').value.trim(),
+                priceRange: document.getElementById('cms-price').value.trim(),
+                turnaround: document.getElementById('cms-turnaround').value.trim(),
+                description: document.getElementById('cms-desc').value.trim()
+            };
+
+            const existingIdx = servicesList.findIndex(s => s.id === id);
+            if (existingIdx > -1) {
+                servicesList[existingIdx] = newSrv;
+            } else {
+                servicesList.push(newSrv);
+            }
+
+            if (db && currentUser) {
+                const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'services', id);
+                await setDoc(docRef, newSrv);
+            }
+
+            resetCmsForm();
+            renderPublicDynamicContent();
+            renderCmsServicesList();
+            showAdminToast('Service & Price Estimator updated live!');
+        }
+
+        async function deleteCmsService(id) {
+            servicesList = servicesList.filter(s => s.id !== id);
+            if (db && currentUser) {
+                const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'services', id);
+                await deleteDoc(docRef);
+            }
+            renderPublicDynamicContent();
+            renderCmsServicesList();
+            showAdminToast('Service removed from catalog.');
+        }
+
+        async function saveSiteSettings(e) {
+            e.preventDefault();
+            siteConfig = {
+                shopStatus: document.getElementById('set-shop-status').value.trim(),
+                announcement: document.getElementById('set-announcement').value.trim(),
+                address: document.getElementById('set-address').value.trim(),
+                adminPin: document.getElementById('set-admin-pin').value.trim() || '2530',
+                pinVersion: 2
+            };
+
+            if (db && currentUser) {
+                const configDoc = doc(db, 'artifacts', appId, 'public', 'data', 'settings', 'siteConfig');
+                await setDoc(configDoc, siteConfig);
+            }
+            applySiteSettingsToDOM();
+            showAdminToast('Website banner, timings & security settings updated live!');
+        }
+
+        function exportBookingsToCSV() {
+            const headers = ['TicketID', 'Date', 'CustomerName', 'Phone', 'Email', 'Wing', 'Category', 'Mode', 'Status', 'EstimatedCost', 'IssueNotes', 'TechnicianRemarks'];
+            const rows = bookingsList.map(b => [
+                b.ticketId,
+                b.preferredDate || '',
+                `"${(b.customerName || '').replace(/"/g, '""')}"`,
+                b.phone || '',
+                b.email || '',
+                `"${b.wing || ''}"`,
+                `"${b.serviceCategory || ''}"`,
+                `"${b.serviceMode || ''}"`,
+                `"${b.status || ''}"`,
+                `"${b.estimatedCost || ''}"`,
+                `"${(b.issueNotes || '').replace(/"/g, '""')}"`,
+                `"${(b.technicianRemarks || '').replace(/"/g, '""')}"`
+            ]);
+
+            const csvContent = 'data:text/csv;charset=utf-8,' + [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement('a');
+            link.setAttribute('href', encodedUri);
+            link.setAttribute('download', `SB_Infotech_Bookings_${new Date().toISOString().split('T')[0]}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            showAdminToast('Bookings CSV downloaded!');
+        }
+
+        function openWhatsApp(message) {
+            const encoded = encodeURIComponent(message);
+            window.open(`https://wa.me/${BUSINESS_WHATSAPP}?text=${encoded}`, '_blank');
+        }
+
+        Object.assign(window, {
+            toggleMobileMenu,
+            switchServiceTab,
+            filterServiceCards,
+            updateEstimate,
+            applyEstimateToBooking,
+            sendEstimateToWhatsApp,
+            preselectBooking,
+            handleBookingSubmit,
+            closeBookingModal,
+            copyTicketId,
+            sendTicketToWhatsApp,
+            sendTicketViaEmail,
+            fillDemoTicket,
+            checkTicketStatus,
+            openWhatsApp,
+            openAdminPanel,
+            closeAdminPanel,
+            verifyAdminPin,
+            switchAdminTab,
+            toggleWalkinForm,
+            createAdminWalkinTicket,
+            renderAdminBookings,
+            saveAdminBookingUpdate,
+            sendAdminWhatsAppToCustomer,
+            deleteAdminBooking,
+            editCmsService,
+            resetCmsForm,
+            saveCmsService,
+            deleteCmsService,
+            saveSiteSettings,
+            exportBookingsToCSV
+        });
+
+        initCloudBackend();
+    </script>
+</body>
+</html>
